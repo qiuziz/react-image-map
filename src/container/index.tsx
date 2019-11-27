@@ -6,5 +6,4 @@
  * @Last Modified time: 2019-11-26 17:16:05
  */
 
-export * from './home';
-export * from './category';
+export * from './images-map';

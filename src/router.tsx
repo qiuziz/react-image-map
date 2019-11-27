@@ -8,30 +8,17 @@
 
 import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import { HashHistory } from './common';
-
-import { LayoutView as Layout } from './component';
 
 import {
-	Home, Category,
+	ImagesMap,
 } from './container';
 
 export const routes = [
   {
-    path: '/home',
-    Component: Home,
+    path: '/example',
+    Component: ImagesMap,
     exact: true,
-		Layout: Layout,
-		title: '首页',
-		noNav: true
-  },
-  {
-    path: '/category',
-    Component: Category,
-    exact: true,
-		Layout: Layout,
 		title: '分类',
-		noNav: true
   },
 ];
 
@@ -39,25 +26,14 @@ const App = () => {
   return (
     <Switch>
       {
-        routes.map(({ path, noNav, Layout, Component, exact, title, noPadding, navStyle, white }: any, index) => {
+        routes.map(({ path, Component, exact, title }: any, index) => {
 					return (
 						<Route
 							key={index}
 							path={path}
 							exact={exact}
 							render={
-	              props => {
-									const { history, location } = props;
-	                const History = HashHistory(history, location);
-	                title && (document.title = title);
-	                return Layout
-		                  ? <Layout {...props} History={History} noNav={noNav} navStyle={navStyle} noPadding={noPadding} white={white}>
-		                    <Component {...props} History={History} />
-		                  </Layout>
-		                  : <div>
-													<Component {...props} History={History} />
-												</div>
-	              }
+	              props => <Component {...props} />
 							}
             />
           )

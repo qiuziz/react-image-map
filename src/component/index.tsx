@@ -5,9 +5,4 @@
  * @Last Modified by: qiuz
  * @Last Modified time: 2019-11-25 20:58:00
  */
-export * from './nav';
-export * from './layout';
-export * from './lang-toggle';
-export * from './image-text';
-export * from './footer';
 export * from './image-map';

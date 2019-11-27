@@ -12,18 +12,24 @@ interface PropsType {
 	className?: string;
 	src: string;
 	map?: any[];
-	onClick?: () => void;
+	onMapClick?: (index: number) => void;
 }
 
 export const ImageMap = (props: PropsType) => {
-	const { className = '', src = '', map = [], onClick = () => { }, ...rest__props } = props;
+	const { className = '', src = '', map = [], onMapClick = (index: number) => {} } = props;
+
+	const mapClick = (index: number) => () => {
+		onMapClick(index);
+	}
+
 	return (
-		<div className={`image-map__content ${className}`} {...rest__props} onClick={onClick}>
+		<div className={`image-map__content ${className}`}>
+			{console.log(11)}
 			<img src={src} alt="" />
 			{
-				map.map((area: any) => {
+				map.map((area: any, index: number) => {
 					return (
-						<span style={area} />
+						<span key={index} style={area} onClick={mapClick(index)}/>
 					)
 				})
 			}
