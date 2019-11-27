@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-07 16:03:31
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-27 23:12:40
+ * @Last Modified time: 2019-11-27 23:42:47
  */
 
 import * as React from 'react';
@@ -38,7 +38,6 @@ const App = () => {
           )
         })
       }
-      <Redirect to="/" />
     </Switch>
   )
 }
