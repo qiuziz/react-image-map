@@ -1,0 +1,19 @@
+.lang-btn {
+	position: absolute;
+	top: 5%;
+	right: 7%;
+	color: #fff;
+	z-index: 99;
+	width: 70px;
+	.active {
+		color: #5A585C;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	span {
+		cursor: pointer;
+	}
+}

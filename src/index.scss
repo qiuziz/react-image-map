@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+	touch-action: manipulation;
+  font-family: PingFangSC-Regular;
+}
+iframe {
+	display: none;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+body {
+	// background-color: #fff !important;
+	padding-top: constant(safe-area-inset-top);
+	padding-left: constant(safe-area-inset-left);
+	padding-right: constant(safe-area-inset-right);
+	padding-bottom: constant(safe-area-inset-bottom);
+}
+
+#root {
+	height: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+.icon-ali-pay {
+	color: #33AEE6;
+}
+.icon-wx-pay {
+	color: #24A757;
+}
+
+.icon-radio-on {
+	color: #F97E44;
+}
+
+.fixed-position {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	// width: 100%;
+	// height: 100%;
+	z-index: 1;
+}
+
+.mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0, 0.1);
+	z-index: 1;
+}
+
+.q__cached__page {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transform:translateX(-100%);
+	animation: slide-out .25s linear;
+}
+
+.q__current__page {
+	animation: slide-in .25s linear;
+}
+
+@keyframes slide-in {
+	from {transform:translateX(100%);}
+	to {transform:translateX(0);}
+}
+@keyframes slide-out {
+	from {transform:translateX(0);}
+	to {transform:translateX(-100%);}
+}
+
+
+picture {
+	width: 100%;
+	img {
+		width: 100%;
+	}
+}
