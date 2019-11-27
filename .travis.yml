@@ -4,9 +4,7 @@ node_js:
   - "10"
 
 # 缓存依赖
-cache:
-  directories:
-    - $HOME/.npm
+cache: yarn
 
 before_install:
   - export TZ='Asia/Shanghai' # 更改时区
