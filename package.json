@@ -1,7 +1,6 @@
 {
-  "name": "syrinx-h5",
+  "name": "react-image-map",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",

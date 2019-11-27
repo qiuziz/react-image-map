@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-07 16:03:31
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-26 17:43:21
+ * @Last Modified time: 2019-11-27 23:12:40
  */
 
 import * as React from 'react';
@@ -15,10 +15,9 @@ import {
 
 export const routes = [
   {
-    path: '/example',
+    path: '/',
     Component: ImagesMap,
     exact: true,
-		title: '分类',
   },
 ];
 
@@ -39,7 +38,7 @@ const App = () => {
           )
         })
       }
-      <Redirect to="/home" />
+      <Redirect to="/" />
     </Switch>
   )
 }
