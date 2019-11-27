@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2018-12-11 11:27:12
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-06-12 10:19:47
+ * @Last Modified time: 2019-11-27 21:36:08
  */
 
 const pattern = {
@@ -52,6 +52,7 @@ export const isBoolean = (value: any) => {
 export const isInteger = (value: any) => {
 	return isNumber(value) && parseInt(value, 10) === value;
 };
+
 export const isFloat = (value: any) => {
 	return isNumber(value) && !isInteger(value);
 };
@@ -69,10 +70,6 @@ export const isEmail = (value: any) => {
 
 export const isUrl = (value: any) => {
 	return typeof (value) === 'string' && !!value.match(pattern.url);
-};
-
-export const isHex = (value: any) => {
-	return typeof (value) === 'string' && !!value.match(pattern.hex);
 };
 
 export const isPromise = (value: any) => {

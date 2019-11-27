@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-05-23 13:59:27
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-06-12 10:21:35
+ * @Last Modified time: 2019-11-27 21:36:49
  */
 
 const Storage = (type = 'local') => {
@@ -89,7 +89,7 @@ const Storage = (type = 'local') => {
 			setData(data);
 		},
 		setItem: function (key: string, value: string) {
-			data[key] = value+''; // forces the value to a string
+			data[key] = value + ''; // forces the value to a string
 			this.length++;
 			setData(data);
 		}

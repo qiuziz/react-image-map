@@ -2,20 +2,17 @@
  * @Author: qiuz
  * @Date: 2019-11-01 14:38:25
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-25 21:00:37
+ * @Last Modified time: 2019-11-27 22:27:09
  */
 
 import React from 'react';
 import './index.scss';
 
-interface PropsType {
-	className?: string;
-	src: string;
-	map?: any[];
-	onMapClick?: (index: number) => void;
-}
+import { ImageMapProps } from './index.d';
 
-export const ImageMap = (props: PropsType) => {
+export * from './index.d';
+
+export const ImageMap = (props: ImageMapProps) => {
 	const { className = '', src = '', map = [], onMapClick = (index: number) => {} } = props;
 
 	const mapClick = (index: number) => () => {

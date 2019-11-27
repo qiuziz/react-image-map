@@ -95,7 +95,7 @@ export const sortForAscii = (obj: any, lowerCase = false,caseSensitive: boolean 
 	// onject array date转换成默认字段
 	Object.keys(obj).forEach(key => {
 		if ((obj[key] || obj[key] === 0) && !isDate(obj[key])) {
-			upperObj[key] = (isObject(obj[key]) || isArray(obj[key]) || isDate(obj[key])) ? 'SHENGDACPROJECT' : (obj[key] + '');
+			upperObj[key] = (isObject(obj[key]) || isArray(obj[key]) || isDate(obj[key])) ? 'AAAAAA' : (obj[key] + '');
 		}
 	});
 
@@ -192,6 +192,7 @@ export const getUrlParams = (): any => {
 	const search = window.location.href.split('?')[1];
 	return queryString.parse(search);
 }
+
 /**
  * @description 判断是否是中文路径
  * @param pathname string

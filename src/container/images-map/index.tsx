@@ -3,19 +3,20 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-27 18:14:20
+ * @Last Modified time: 2019-11-27 22:28:01
  */
 
-import * as React from 'react';
+import React from 'react';
 import './index.scss';
-import { ImagePicker, Toast, Button } from 'antd-mobile';
 import ReactCrop from 'react-image-crop';
 import "react-image-crop/dist/ReactCrop.css";
 import CopyToClipboard from 'react-copy-to-clipboard';
-import EXAMPLE from './images/example.png';
 import { useState, useEffect } from 'react';
-import { ImageMap } from 'component';
-const EXAMPLE_AREA = [
+import { ImageMap, Area } from 'component';
+
+import EXAMPLE from './images/example.png';
+
+const EXAMPLE_AREA: Area[] = [
 	{
 		"left": "0",
 		"top": "6",
@@ -23,6 +24,7 @@ const EXAMPLE_AREA = [
 		"width": "33",
 	}
 ];
+
 const CROP: ReactCrop.Crop = {
 	unit: "%",
 	x: 0,
@@ -31,8 +33,8 @@ const CROP: ReactCrop.Crop = {
 	width: 33,
 };
 
-const formarMapArea = (mapArea: any) => {
-	return mapArea.map((area: any) => {
+const formarMapArea = (mapArea: any): Area[] => {
+	return mapArea.map((area: Area & {[k: string]: string}) => {
 		let result: any = {};
 		Object.keys(area).forEach((key: string) => {
 			result[key] = `${area[key]}%`;
@@ -41,11 +43,11 @@ const formarMapArea = (mapArea: any) => {
 	});
 }
 
-export const ImagesMap = (props: any) => {
-	const [img, setImg] = useState(EXAMPLE);
-	const [mapArea, setMapArea] = useState(EXAMPLE_AREA);
-	const [crop, setCrop] = useState(CROP);
-	const [mapAreaString, setMapAreaString] = useState(JSON.stringify(formarMapArea(mapArea)));
+export const ImagesMap = () => {
+	const [img, setImg] = useState<string>(EXAMPLE);
+	const [mapArea, setMapArea] = useState<Area[]>(EXAMPLE_AREA);
+	const [crop, setCrop] = useState<ReactCrop.Crop>(CROP);
+	const [mapAreaString, setMapAreaString] = useState<string>(JSON.stringify(formarMapArea(mapArea)));
 
 	useEffect(() => {
 		const cropBoxEle: HTMLElement | null = document.querySelector('.ReactCrop');
@@ -61,14 +63,19 @@ export const ImagesMap = (props: any) => {
 		}
 	});
 
-	const onChange = (files: any) => {
-		const [data = { url: '' }] = files;
-		setImg(data.url);
-		setMapArea([]);
-		setCrop(CROP);
+	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		if (e.target.files && e.target.files.length > 0) {
+      const reader: FileReader = new FileReader();
+      reader.addEventListener('load', () => {
+				setImg(reader.result as string);
+				setMapArea(EXAMPLE_AREA);
+				setCrop(CROP);
+      });
+      reader.readAsDataURL(e.target.files[0]);
+    }
 	}
 
-	const setMap = (type: string, index: number) => (e: any) => {
+	const setMap = (type: string, index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
 		setMapArea(mapArea.map((map: any, idx: number) => index === idx ? { ...map, [type]: value } : map));
 	}
@@ -164,17 +171,18 @@ export const ImagesMap = (props: any) => {
 				})
 			}
 			<div className="opt-box">
-				<Button className="cad-iconfont icon-dotted-box" onClick={addSubArea('add')}>添加热区</Button>
-				<CopyToClipboard text={mapAreaString} onCopy={() => Toast.info('已复制到剪贴板')}>
-					<Button className="cad-iconfont icon-copy" >复制</Button>
+				<button className="cad-iconfont icon-dotted-box" onClick={addSubArea('add')}>添加热区</button>
+				<CopyToClipboard text={mapAreaString}>
+					<button className="cad-iconfont icon-copy" >复制</button>
 				</CopyToClipboard>
-				<Button className="cad-iconfont icon-image">
-					<ImagePicker
+				<button className="cad-iconfont icon-image">
+					<input
+						type="file"
+						accept="image/*"
 						className="picker-image"
-						length={1}
 						onChange={onChange}
 					/>选择图片
-				</Button>
+				</button>
 			</div>
 			<textarea cols={3} value={mapAreaString} readOnly />
 
