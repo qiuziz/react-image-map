@@ -1,6 +1,7 @@
 {
   "name": "react-image-map",
-  "version": "0.1.0",
+	"version": "0.1.0",
+	"homepage": "./",
   "dependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
