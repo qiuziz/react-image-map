@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-07 16:03:31
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-28 09:51:57
+ * @Last Modified time: 2019-11-28 10:05:50
  */
 
 import * as React from 'react';
@@ -12,6 +12,8 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import {
 	ImagesMap,
 } from './container';
+
+const prefix = process.env.NODE_ENV === 'production' ? '/react-image-map' : '';
 
 export const routes = [
   {
@@ -25,11 +27,11 @@ const App = () => {
   return (
     <Switch>
       {
-        routes.map(({ path, Component, exact, title }: any, index) => {
+        routes.map(({ path, Component, exact }: any, index) => {
 					return (
 						<Route
 							key={index}
-							path={path}
+							path={`${prefix}${path}`}
 							exact={exact}
 							render={
 	              props => <Component {...props} />
@@ -38,7 +40,7 @@ const App = () => {
           )
         })
       }
-      <Redirect to="/" />
+      <Redirect to={`${prefix}`} />
     </Switch>
   )
 }
