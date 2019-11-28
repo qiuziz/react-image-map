@@ -37,4 +37,4 @@ deploy:
     branch: master
 
 after_success:
-  - git push --delete origin deploy
+  - git push --delete "https://${GH_TOKEN}@${GH_REF}" deploy

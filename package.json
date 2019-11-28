@@ -2,6 +2,7 @@
   "name": "react-image-map",
   "version": "0.1.0",
   "homepage": "/react-image-map",
+	"license": "MIT",
   "dependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
