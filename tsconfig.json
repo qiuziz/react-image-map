@@ -25,6 +25,7 @@
 		"src"
 	],
 	"exclude": [
-		"config"
+		"config",
+		"**__test__**"
 	]
 }

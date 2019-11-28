@@ -20,7 +20,7 @@ script:
 # 分支白名单
 branches:
   only:
-    - master # 只对 master 分支进行构建
+    - deploy # 只对 deploy 分支进行构建
 
 # GitHub Pages 部署
 deploy:

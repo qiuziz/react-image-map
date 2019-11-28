@@ -2,7 +2,7 @@
  * @Author: qiuz
  * @Date: 2019-11-01 14:38:25
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-27 22:27:09
+ * @Last Modified time: 2019-11-28 13:28:45
  */
 
 import React from 'react';
@@ -21,7 +21,6 @@ export const ImageMap = (props: ImageMapProps) => {
 
 	return (
 		<div className={`image-map__content ${className}`}>
-			{console.log(11)}
 			<img src={src} alt="" />
 			{
 				map.map((area: any, index: number) => {
