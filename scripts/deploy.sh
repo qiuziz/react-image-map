@@ -24,17 +24,20 @@ function build_deploy() {
 
 	git branch -D $DEPLOY_BRANCH
 
-	for branch in $(git for-each-ref --format='%(refname)' refs/remotes/); do
-    if [[ $branch =~ "deploy" ]];then
-			git push --delete origin ${branch#*refs/remotes/origin/}
-			echo $branch
-		fi
-	done
-	# 解决远程分支删除后还是能看到
-	git remote show origin
 
-	git remote prune origin
 }
+
+# for branch in $(git for-each-ref --format='%(refname)' refs/remotes/); do
+#   if [[ $branch =~ "deploy" ]];then
+# 		git push --delete origin ${branch#*refs/remotes/origin/}
+# 		echo $branch
+# 	fi
+# done
+
+# 解决远程分支删除后还是能看到
+git remote show origin
+
+git remote prune origin
 
 
 build_deploy

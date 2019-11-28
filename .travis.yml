@@ -35,3 +35,6 @@ deploy:
   email: $GIT_EMAIL
   on:
     branch: master
+
+after_deploy:
+  - git push --delete origin deploy
