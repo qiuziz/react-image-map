@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-07 16:03:31
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-28 09:45:52
+ * @Last Modified time: 2019-11-28 09:51:57
  */
 
 import * as React from 'react';
@@ -15,7 +15,7 @@ import {
 
 export const routes = [
   {
-    path: '/setting',
+    path: '/',
     Component: ImagesMap,
     exact: true,
   },
@@ -38,7 +38,7 @@ const App = () => {
           )
         })
       }
-      <Redirect to="/setting" />
+      <Redirect to="/" />
     </Switch>
   )
 }
