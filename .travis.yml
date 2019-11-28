@@ -36,5 +36,5 @@ deploy:
   on:
     branch: master
 
-after_deploy:
+after_success:
   - git push --delete origin deploy
