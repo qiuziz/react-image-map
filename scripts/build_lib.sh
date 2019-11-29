@@ -4,9 +4,9 @@ set -e
 
 function build() {
 	version=$1
-	
-	npm version ${version:-patch}
 
+	VERSION=npm version ${version:-patch}
+	echo $VERSION
 	# if [[ -n "$git_revision" ]]; then
 	# 	current_branch="$(git symbolic-ref --short -q HEAD)"
 	# 	current_branch=${current_branch:-dev}

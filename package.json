@@ -32,8 +32,7 @@
     "test": "node scripts/test.js",
     "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
     "lib": "sh scripts/build_lib.sh",
-    "deploy": "sh scripts/deploy.sh",
-    "postversion": "git push --follow-tags"
+    "deploy": "sh scripts/deploy.sh"
   },
   "typings": "index.d.ts",
   "dependencies": {
@@ -42,7 +41,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.4.3",
-    "@qiuz/react-image-map": "0.1.15",
+    "@qiuz/react-image-map": "0.1.18",
     "@svgr/webpack": "4.1.0",
     "@types/node": "12.0.7",
     "@types/qs": "^6.5.3",

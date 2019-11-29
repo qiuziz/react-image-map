@@ -1141,10 +1141,10 @@
   resolved "https://registry.npm.taobao.org/@nodelib/fs.stat/download/@nodelib/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha1-K1o6s/kYzKSKjHVMCBaOPwPrphs=
 
-"@qiuz/react-image-map@0.1.15":
-  version "0.1.15"
-  resolved "https://registry.npmjs.org/@qiuz/react-image-map/-/react-image-map-0.1.15.tgz#21f38dc6e445ffb6a1ca484d78ae781b026a62f2"
-  integrity sha512-sBhEK+PSGEuMaYQdnNUYQiWR0JKyWFN1SUl11tO1niFAbebQNvzikcfmiKCOkhQ2CJ/ZorWakGm8FndsDa8U+w==
+"@qiuz/react-image-map@0.1.18":
+  version "0.1.18"
+  resolved "https://registry.npmjs.org/@qiuz/react-image-map/-/react-image-map-0.1.18.tgz#448129b0f564f10e14caa7fe3580b66ece9de3b5"
+  integrity sha512-ciTpPGd1tIfIWuMB9W/MkKB5hQ4DKdWuAkAKe57xigtl9dZMbWnzErSYTjaGfo52e/LarGkVW7R8uJHC2+PT/Q==
   dependencies:
     react "^16.8.6"
     react-dom "^16.8.6"
