@@ -6,7 +6,7 @@ function build() {
 	version=$1
 
 	VERSION=`npm version ${version:-patch}`
-	echo $VERSION
+	echo `aaaaa$VERSION`
 	# if [[ -n "$git_revision" ]]; then
 	# 	current_branch="$(git symbolic-ref --short -q HEAD)"
 	# 	current_branch=${current_branch:-dev}
