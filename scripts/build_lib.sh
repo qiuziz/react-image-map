@@ -23,7 +23,8 @@ function build() {
 	module.exports = { ImageMap: ImageMap };
 	EOT
 
-	git commit -a -m '**ImageMap npm build**'
+	git add .
+	git commit -m '**ImageMap npm build**'
 
 	# npm login 
 
