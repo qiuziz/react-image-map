@@ -37,6 +37,9 @@ function build() {
 	npm version ${version:-patch}
 
 	git push
+
+	npm login
+
 	npm publish lib
 
 }
