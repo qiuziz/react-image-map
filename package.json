@@ -24,7 +24,10 @@
   },
   "files": [
     "lib"
-  ],
+	],
+	"publishConfig": {
+    "access": "public"
+  },
   "author": "qiuz",
   "main": "index.js",
   "scripts": {
