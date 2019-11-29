@@ -1,6 +1,6 @@
 {
   "name": "@qiuz/react-image-map",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "homepage": "https://qiuziz.github.io/react-image-map",
   "description": "基于 React 的图片热区高效设置",
   "license": "MIT",
