@@ -22,9 +22,6 @@
   "bugs": {
     "url": "https://github.com/qiuziz/react-image-map/issues"
   },
-  "files": [
-    "lib"
-  ],
   "publishConfig": {
     "access": "public"
   },
@@ -44,14 +41,14 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@qiuz/react-image-map": "0.1.13",
-    "@types/react": "16.8.19",
-    "@types/react-dom": "16.8.4",
     "@babel/core": "7.4.3",
+    "@qiuz/react-image-map": "0.1.15",
     "@svgr/webpack": "4.1.0",
     "@types/node": "12.0.7",
     "@types/qs": "^6.5.3",
+    "@types/react": "16.8.19",
     "@types/react-copy-to-clipboard": "^4.3.0",
+    "@types/react-dom": "16.8.4",
     "@types/react-image-crop": "^8.1.2",
     "@types/react-router-dom": "^4.3.3",
     "@typescript-eslint/eslint-plugin": "1.6.0",
