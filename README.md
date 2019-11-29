@@ -1,6 +1,7 @@
 ## ImageMap
 [![Build Status](https://travis-ci.org/qiuziz/react-image-map.svg?branch=master)](https://travis-ci.org/qiuziz/react-image-map)
-[![Coverage Status](https://coveralls.io/repos/github/qiuziz/react-image-map/badge.svg?branch=master)](https://coveralls.io/github/qiuziz/react-image-map?branch=master)
+![npm](https://img.shields.io/npm/v/@qiuz/react-image-map)
+![David](https://img.shields.io/david/dev/qiuziz/react-image-map)
 
 > A React Image Map
 
