@@ -41,7 +41,6 @@ deploy:
       - yarn lib
     on:
       tags: true
-      branch: master
     tag: latest
 
 after_success:
