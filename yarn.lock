@@ -1141,6 +1141,16 @@
   resolved "https://registry.npm.taobao.org/@nodelib/fs.stat/download/@nodelib/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha1-K1o6s/kYzKSKjHVMCBaOPwPrphs=
 
+"@qiuz/react-image-map@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@qiuz/react-image-map/-/react-image-map-0.1.1.tgz#a604d80b4448ee898e6a08a562e3559a03ab6839"
+  integrity sha512-ySJGlrDNn9kVmRvsIClsG1nVqOaW+ycFRgNOT3UfEWX+tT2XI5ewC2d1DsfcBSDJM3p57VQqV0d6F2NHWzZzCw==
+  dependencies:
+    "@types/react" "16.8.19"
+    "@types/react-dom" "16.8.4"
+    react "^16.8.6"
+    react-dom "^16.8.6"
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.npm.taobao.org/@svgr/babel-plugin-add-jsx-attribute/download/@svgr/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"

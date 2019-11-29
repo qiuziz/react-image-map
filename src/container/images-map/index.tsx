@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-29 11:08:34
+ * @Last Modified time: 2019-11-29 11:28:37
  */
 
 import React from 'react';
@@ -14,7 +14,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { useState, useEffect } from 'react';
 
 import EXAMPLE from './images/example.png';
-import { ImageMap, Area } from 'react-image-map';
+import { ImageMap, Area } from '@qiuz/react-image-map';
 
 const EXAMPLE_AREA: Area[] = [
 	{

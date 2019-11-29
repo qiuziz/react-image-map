@@ -17,11 +17,6 @@ install:
 script:
   - yarn build
 
-# 分支白名单
-branches:
-  only:
-    - deploy # 只对 deploy 分支进行构建
-
 # GitHub Pages 部署
 deploy:
   provider: pages
@@ -34,7 +29,16 @@ deploy:
   name: $GIT_NAME
   email: $GIT_EMAIL
   on:
+    branch: deploy
+  provider: npm
+  email: 'zhu_anly@163.com'
+  skip_cleanup: true
+  api_key:
+    secure: $NPM_TOKEN
+  on:
+    tags: true
     branch: master
+  tag: latest
 
 after_success:
   - git push --delete "https://${GITHUB_TOKEN}@${GIT_REF}" deploy

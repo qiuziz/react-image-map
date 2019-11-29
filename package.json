@@ -1,54 +1,55 @@
 {
-  "name": "react-image-map",
-  "version": "0.1.0",
-	"homepage": "https://qiuziz.github.io/react-image-map",
-	"description": "基于 React 的图片热区高效设置",
-	"license": "MIT",
-	"keywords": [
+  "name": "@qiuz/react-image-map",
+  "version": "0.1.1",
+  "homepage": "https://qiuziz.github.io/react-image-map",
+  "description": "基于 React 的图片热区高效设置",
+  "license": "MIT",
+  "keywords": [
     "react-iamge-map",
-		"react",
-		"hooks",
+    "react",
+    "hooks",
     "image-map",
     "image",
     "map",
-		"react-component",
-		"component",
+    "react-component",
+    "component",
     "frontend"
-	],
-	"repository": {
+  ],
+  "repository": {
     "type": "git",
     "url": "https://github.com/qiuziz/react-image-map.git"
-	},
-	"bugs": {
+  },
+  "bugs": {
     "url": "https://github.com/qiuziz/react-image-map/issues"
-	},
-	"files": [
+  },
+  "files": [
     "lib"
-	],
-	"author": "qiuz",
-	"main": "index.js",
-	"scripts": {
+  ],
+  "author": "qiuz",
+  "main": "index.js",
+  "scripts": {
     "start": "node scripts/start.js",
     "test": "node scripts/test.js",
     "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
     "lib": "sh scripts/build_lib.sh",
     "deploy": "sh scripts/deploy.sh"
-	},
-	"typings": "index.d.ts",
+  },
+  "typings": "index.d.ts",
   "dependencies": {
-		"@types/react": "16.8.19",
+    "@qiuz/react-image-map": "0.1.1",
+    "@types/react": "16.8.19",
     "@types/react-dom": "16.8.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
-	},
-	"devDependencies": {
-		"@babel/core": "7.4.3",
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
     "@types/node": "12.0.7",
     "@types/qs": "^6.5.3",
-		"@types/react-copy-to-clipboard": "^4.3.0",
+    "@types/react-copy-to-clipboard": "^4.3.0",
     "@types/react-image-crop": "^8.1.2",
-		"@types/react-router-dom": "^4.3.3",
+    "@types/react-router-dom": "^4.3.3",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
     "babel-eslint": "10.0.1",
@@ -81,8 +82,8 @@
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.7.1",
     "jest-watch-typeahead": "0.3.0",
-		"less": "^3.9.0",
-		"less-loader": "^5.0.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "0.5.0",
     "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
@@ -106,8 +107,7 @@
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.3",
     "ts-import-plugin": "^1.6.1",
-		"ts-pnp": "1.1.2",
-    "react-image-map": "0.1.0",
+    "ts-pnp": "1.1.2",
     "typescript": "3.4.5",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "1.1.2",
@@ -131,7 +131,6 @@
       "last 1 safari version"
     ]
   },
-
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
