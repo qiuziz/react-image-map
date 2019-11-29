@@ -3,7 +3,19 @@ language: node_js
 node_js:
   - "10"
 
-
+branches:
+  only:
+    - master
+    - deploy
+  # 缓存依赖
+cache: yarn
+before_install:
+  - if [ ${TRAVIS_BRANCH} == master && [ -z "$TRAVIS_TAG" ] ]; then
+      exit 0;
+    fi
+  - export TZ='Asia/Shanghai' # 更改时区
+install:
+- yarn install
 
 # GitHub Pages 部署
 deploy:
@@ -13,30 +25,18 @@ deploy:
     github_token: $GITHUB_TOKEN
     # 将 build 目录下的内容推送到默认的 gh-pages 分支上，并不会连带 build 目录一起
     local_dir: build
-    # 缓存依赖
-    cache: yarn
-    before_install:
-      - export TZ='Asia/Shanghai' # 更改时区
     #fqdn: $CUSTOM_DOMAIN
     name: $GIT_NAME
     email: $GIT_EMAIL
-    install:
-      - yarn install
     script:
       - yarn build
     on:
       branch: deploy
   - provider: npm
-    email: 'zhu_anly@163.com'
+    email: "zhu_anly@163.com"
     skip_cleanup: true
-    # 缓存依赖
-    cache: yarn
-    before_install:
-      - export TZ='Asia/Shanghai' # 更改时区
     api_key:
       secure: $NPM_TOKEN
-    install:
-      - yarn install
     script:
       - yarn lib
     on:
