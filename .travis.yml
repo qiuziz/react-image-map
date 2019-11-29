@@ -5,14 +5,14 @@ node_js:
 
 branches:
   only:
-    - master
+    # - master
     - deploy
   # 缓存依赖
 cache: yarn
 before_install:
-  - if [ ${TRAVIS_BRANCH} == "master" ] && [ -z "$TRAVIS_TAG" ]; then
-      exit 0;
-    fi
+  # - if [ ${TRAVIS_BRANCH} == "master" ] && [ -z "$TRAVIS_TAG" ]; then
+  #     exit 0;
+  #   fi
   - export TZ='Asia/Shanghai' # 更改时区
 install:
 - yarn install
