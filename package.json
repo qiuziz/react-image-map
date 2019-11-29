@@ -32,7 +32,8 @@
     "test": "node scripts/test.js",
     "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
     "lib": "sh scripts/build_lib.sh",
-    "deploy": "sh scripts/deploy.sh"
+    "deploy": "sh scripts/deploy.sh",
+		"postversion": "git push --follow-tags"
   },
   "typings": "index.d.ts",
   "dependencies": {
