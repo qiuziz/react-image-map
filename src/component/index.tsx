@@ -3,6 +3,6 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-01 13:34:12
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-25 20:58:00
+ * @Last Modified time: 2019-11-29 10:02:56
  */
-export * from './image-map';
+export { ImageMap } from './image-map';

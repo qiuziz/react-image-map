@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-27 22:28:01
+ * @Last Modified time: 2019-11-29 11:08:34
  */
 
 import React from 'react';
@@ -12,9 +12,9 @@ import ReactCrop from 'react-image-crop';
 import "react-image-crop/dist/ReactCrop.css";
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { useState, useEffect } from 'react';
-import { ImageMap, Area } from 'component';
 
 import EXAMPLE from './images/example.png';
+import { ImageMap, Area } from 'react-image-map';
 
 const EXAMPLE_AREA: Area[] = [
 	{
@@ -190,6 +190,7 @@ export const ImagesMap = () => {
 			<div className="usage">
 				{ImageMapComponent}
 			</div>
+			{/* <Snake.Button>sss</Snake.Button> */}
 		</div>
 	);
 }
