@@ -38,7 +38,7 @@ function build() {
 
 	git push
 
-	npm login 
+	# npm login 
 
 	npm publish lib
 
