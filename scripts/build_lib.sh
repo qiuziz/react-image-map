@@ -4,6 +4,8 @@ set -e
 
 function build() {
 	version=$1
+	
+	npm version ${version:-patch}
 
 	# if [[ -n "$git_revision" ]]; then
 	# 	current_branch="$(git symbolic-ref --short -q HEAD)"
@@ -34,7 +36,6 @@ function build() {
 
 	git commit -a -m '**ImageMap npm build**'
 
-	npm version ${version:-patch}
 
 	git push
 
