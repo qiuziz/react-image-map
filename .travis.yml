@@ -5,24 +5,21 @@ node_js:
 
 branches:
   only:
-    - master
     - deploy
   # 缓存依赖
 cache: yarn
+# before_install:
+#   - if [ ${TRAVIS_BRANCH} == "master" ] && [ -z "$TRAVIS_TAG" ]; then
+#       exit 0;
+#     fi
+#   - export TZ='Asia/Shanghai' # 更改时区
 before_install:
-  - if [ ${TRAVIS_BRANCH} == "master" ] && [ -z "$TRAVIS_TAG" ]; then
-      exit 0;
-    fi
-  - export TZ='Asia/Shanghai' # 更改时区
+    - export TZ='Asia/Shanghai' # 更改时区
 install:
 - yarn install
 
 script:
-  - if [ ${TRAVIS_BRANCH} == "master" ] && [ -n "$TRAVIS_TAG" ]; then
-      yarn lib;
-    else
-      yarn build;
-    fi
+  - yarn build;
 
 # GitHub Pages 部署
 deploy:
@@ -39,17 +36,5 @@ deploy:
       - yarn build
     on:
       branch: deploy
-  - provider: npm
-    email: "zhu_anly@163.com"
-    skip_cleanup: true
-    api_key:
-      secure: $NPM_TOKEN
-    script:
-      - yarn lib
-    on:
-      tags: true
-      branch: master
-    tag: latest
-
 after_success:
   - git push --delete "https://${GITHUB_TOKEN}@${GIT_REF}" deploy

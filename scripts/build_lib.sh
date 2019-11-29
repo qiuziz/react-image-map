@@ -3,7 +3,7 @@
 set -e
 
 function build() {
-	# git_revision=$1
+	version=$1
 
 	# if [[ -n "$git_revision" ]]; then
 	# 	current_branch="$(git symbolic-ref --short -q HEAD)"
@@ -32,13 +32,13 @@ function build() {
 	module.exports = { ImageMap: ImageMap };
 	EOT
 
-	cp -rf $BASE/* node_modules/react-image-map
+	git commit -a -m 'ImageMap npm build'
 
-	
+	npm version ${version:-patch}
 
-	# if [[ -n "$current_branch" ]]; then
-	# 	git checkout $current_branch
-	# fi
+	git push
+	npm publish lib
+
 }
 
 build $@
