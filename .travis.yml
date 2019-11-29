@@ -19,26 +19,26 @@ script:
 
 # GitHub Pages 部署
 deploy:
-  provider: pages
-  skip_cleanup: true
-  # 在项目仪表盘的 Settings -> Environment Variables 中配置
-  github_token: $GITHUB_TOKEN
-  # 将 build 目录下的内容推送到默认的 gh-pages 分支上，并不会连带 build 目录一起
-  local_dir: build
-  #fqdn: $CUSTOM_DOMAIN
-  name: $GIT_NAME
-  email: $GIT_EMAIL
-  on:
-    branch: deploy
-  provider: npm
-  email: 'zhu_anly@163.com'
-  skip_cleanup: true
-  api_key:
-    secure: $NPM_TOKEN
-  on:
-    tags: true
-    branch: master
-  tag: latest
+  - provider: pages
+    skip_cleanup: true
+    # 在项目仪表盘的 Settings -> Environment Variables 中配置
+    github_token: $GITHUB_TOKEN
+    # 将 build 目录下的内容推送到默认的 gh-pages 分支上，并不会连带 build 目录一起
+    local_dir: build
+    #fqdn: $CUSTOM_DOMAIN
+    name: $GIT_NAME
+    email: $GIT_EMAIL
+    on:
+      branch: deploy
+  - provider: npm
+    email: 'zhu_anly@163.com'
+    skip_cleanup: true
+    api_key:
+      secure: $NPM_TOKEN
+    on:
+      tags: true
+      branch: master
+    tag: latest
 
 after_success:
   - git push --delete "https://${GITHUB_TOKEN}@${GIT_REF}" deploy
