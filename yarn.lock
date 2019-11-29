@@ -1151,6 +1151,17 @@
     react "^16.8.6"
     react-dom "^16.8.6"
 
+"@qiuz/react-image-map@0.1.13":
+  version "0.1.13"
+  resolved "https://registry.npmjs.org/@qiuz/react-image-map/-/react-image-map-0.1.13.tgz#4727c294bd980ed8257b8f9694bd1f7eb840c51d"
+  integrity sha512-5/yVLLs7+mdGw4BuQ9n4zlM73dcUoG/XMJhPXp/beAv6oypvRwzpFG8QbnI+yayIOsg/T8KiN1ReYzTT4thSBA==
+  dependencies:
+    "@qiuz/react-image-map" "0.1.1"
+    "@types/react" "16.8.19"
+    "@types/react-dom" "16.8.4"
+    react "^16.8.6"
+    react-dom "^16.8.6"
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.npm.taobao.org/@svgr/babel-plugin-add-jsx-attribute/download/@svgr/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
