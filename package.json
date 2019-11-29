@@ -1,6 +1,6 @@
 {
   "name": "@qiuz/react-image-map",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "homepage": "https://qiuziz.github.io/react-image-map",
   "description": "基于 React 的图片热区高效设置",
   "license": "MIT",
@@ -44,7 +44,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-		"@qiuz/react-image-map": "0.1.13",
+    "@qiuz/react-image-map": "0.1.13",
     "@types/react": "16.8.19",
     "@types/react-dom": "16.8.4",
     "@babel/core": "7.4.3",
