@@ -10,7 +10,7 @@ branches:
   # 缓存依赖
 cache: yarn
 before_install:
-  - if [ ${TRAVIS_BRANCH} == "master" ] && [ tag IS present ]; then
+  - if [ ${TRAVIS_BRANCH} == "master" ] && [ -z "$TRAVIS_TAG" ]; then
       exit 0;
     fi
   - export TZ='Asia/Shanghai' # 更改时区
