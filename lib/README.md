@@ -1,3 +1,0 @@
-## ImageMap
-
-### Usage
