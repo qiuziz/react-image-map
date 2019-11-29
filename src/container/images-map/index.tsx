@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-29 11:28:37
+ * @Last Modified time: 2019-11-29 18:05:58
  */
 
 import React from 'react';
@@ -105,7 +105,7 @@ export const ImagesMap = () => {
 	}
 
 	const onMapClick = (index: number) => {
-		const tip = `当前点击：热区${index + 1}`;
+		const tip = `click map${index + 1}`;
 		console.log(tip);
 		alert(tip);
 	}
@@ -146,22 +146,22 @@ export const ImagesMap = () => {
 				img && mapArea.map((map: any, index: number) => {
 					return (
 						<div className="map-area" key={index}>
-							<label className="title">热区{index + 1}</label>
+							<label className="title">map{index + 1}</label>
 							<div className="setting-box">
 								<div className="setting-box-item">
-									<label>宽: </label>
+									<label>width: </label>
 									<input value={map.width} type="number" onChange={setMap('width', index)} />
 								</div>
 								<div className="setting-box-item">
-									<label>高: </label>
+									<label>height: </label>
 									<input value={map.height} type="number" onChange={setMap('height', index)} />
 								</div>
 								<div className="setting-box-item">
-									<label>左边距: </label>
+									<label>left: </label>
 									<input value={map.left} type="number" onChange={setMap('left', index)} />
 								</div>
 								<div className="setting-box-item">
-									<label>上边距: </label>
+									<label>top: </label>
 									<input value={map.top} type="number" onChange={setMap('top', index)} />
 								</div>
 							</div>
@@ -171,9 +171,9 @@ export const ImagesMap = () => {
 				})
 			}
 			<div className="opt-box">
-				<button className="cad-iconfont icon-dotted-box" onClick={addSubArea('add')}>添加热区</button>
+				<button className="cad-iconfont icon-dotted-box" onClick={addSubArea('add')}>Add map</button>
 				<CopyToClipboard text={mapAreaString}>
-					<button className="cad-iconfont icon-copy" >复制</button>
+					<button className="cad-iconfont icon-copy" >Copy</button>
 				</CopyToClipboard>
 				<button className="cad-iconfont icon-image">
 					<input
@@ -181,16 +181,15 @@ export const ImagesMap = () => {
 						accept="image/*"
 						className="picker-image"
 						onChange={onChange}
-					/>选择图片
+					/>Select images
 				</button>
 			</div>
 			<textarea cols={3} value={mapAreaString} readOnly />
 
-			<h3>点击设置的热区：</h3>
+			<h3>Click on you set of map：</h3>
 			<div className="usage">
 				{ImageMapComponent}
 			</div>
-			{/* <Snake.Button>sss</Snake.Button> */}
 		</div>
 	);
 }

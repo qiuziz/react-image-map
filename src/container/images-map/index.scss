@@ -18,7 +18,7 @@
 			.ReactCrop__crop-selection {
 				box-shadow: inset 0 0 0 9999em rgba(0, 0, 0, 0.5) !important;
 				&::before {
-					content: '双击添加热区';
+					content: 'dbclick add map';
 					display: flex;
 			    align-items: center;
 			    justify-content: center;
