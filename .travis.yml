@@ -9,13 +9,7 @@ cache: yarn
 before_install:
   - export TZ='Asia/Shanghai' # 更改时区
 
-# 依赖安装
-install:
-  - yarn install
 
-# 构建脚本
-script:
-  - yarn build
 
 # GitHub Pages 部署
 deploy:
@@ -28,6 +22,10 @@ deploy:
     #fqdn: $CUSTOM_DOMAIN
     name: $GIT_NAME
     email: $GIT_EMAIL
+    install:
+      - yarn install
+    script:
+      - yarn build
     on:
       branch: deploy
   - provider: npm
@@ -35,6 +33,10 @@ deploy:
     skip_cleanup: true
     api_key:
       secure: $NPM_TOKEN
+    install:
+      - yarn install
+    script:
+      - yarn lib
     on:
       tags: true
       branch: master
