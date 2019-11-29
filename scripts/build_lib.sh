@@ -38,9 +38,9 @@ function build() {
 
 	git push
 
-	npm login
+	npm --registry https://registry.npm.org login
 
-	npm publish lib
+	npm --registry https://registry.npm.org publish lib
 
 }
 
