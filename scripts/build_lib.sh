@@ -32,7 +32,7 @@ function build() {
 	module.exports = { ImageMap: ImageMap };
 	EOT
 
-	git commit -a -m 'ImageMap npm build'
+	git commit -a -m '**ImageMap npm build**'
 
 	npm version ${version:-patch}
 
