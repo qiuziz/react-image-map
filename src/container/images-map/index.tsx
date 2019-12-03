@@ -3,25 +3,30 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-11-29 18:05:58
+ * @Last Modified time: 2019-12-03 16:15:50
  */
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import './index.scss';
 import ReactCrop from 'react-image-crop';
 import "react-image-crop/dist/ReactCrop.css";
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { useState, useEffect } from 'react';
-
-import EXAMPLE from './images/example.png';
 import { ImageMap, Area } from '@qiuz/react-image-map';
 
-const EXAMPLE_AREA: Area[] = [
+import EXAMPLE from './images/example.png';
+import { getUrlParams } from 'common';
+
+interface AreaType extends Area {
+	link?: string;
+}
+const EXAMPLE_AREA: AreaType[] = [
 	{
 		"left": "0",
 		"top": "6",
 		"height": "12",
 		"width": "33",
+		"link": ''
 	}
 ];
 
@@ -33,22 +38,25 @@ const CROP: ReactCrop.Crop = {
 	width: 33,
 };
 
-const formarMapArea = (mapArea: any): Area[] => {
-	return mapArea.map((area: Area & {[k: string]: string}) => {
+const formarMapArea = (mapArea: any): AreaType[] => {
+	return mapArea.map((area: AreaType & {[k: string]: string}) => {
 		let result: any = {};
 		Object.keys(area).forEach((key: string) => {
-			result[key] = `${area[key]}%`;
+			result[key] = key !== 'link' ? `${area[key]}%` : area[key];
 		});
 		return result;
 	});
 }
 
+const { imgSrc } = getUrlParams();
+
 export const ImagesMap = () => {
-	const [img, setImg] = useState<string>(EXAMPLE);
-	const [mapArea, setMapArea] = useState<Area[]>(EXAMPLE_AREA);
+	const [img, setImg] = useState<string>(imgSrc || EXAMPLE);
+	const [mapArea, setMapArea] = useState<AreaType[]>(EXAMPLE_AREA);
 	const [crop, setCrop] = useState<ReactCrop.Crop>(CROP);
 	const [mapAreaString, setMapAreaString] = useState<string>(JSON.stringify(formarMapArea(mapArea)));
-
+	const [mapAreaFormatString, setMapAreaFormatString] = useState<string>(JSON.stringify(formarMapArea(mapArea), null, 4));
+	
 	useEffect(() => {
 		const cropBoxEle: HTMLElement | null = document.querySelector('.ReactCrop');
 		const handle = (e: any) => {
@@ -68,7 +76,7 @@ export const ImagesMap = () => {
       const reader: FileReader = new FileReader();
       reader.addEventListener('load', () => {
 				setImg(reader.result as string);
-				setMapArea(EXAMPLE_AREA);
+				setMapArea([]);
 				setCrop(CROP);
       });
       reader.readAsDataURL(e.target.files[0]);
@@ -77,7 +85,10 @@ export const ImagesMap = () => {
 
 	const setMap = (type: string, index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
-		setMapArea(mapArea.map((map: any, idx: number) => index === idx ? { ...map, [type]: value } : map));
+		const mapAreaNew = mapArea.map((map: any, idx: number) => index === idx ? { ...map, [type]: value } : map);
+		setMapArea(mapAreaNew);
+		setMapAreaString(JSON.stringify(formarMapArea(mapAreaNew)));
+		setMapAreaFormatString(JSON.stringify(formarMapArea(mapAreaNew), null, 4));
 	}
 
 	const addSubArea = (type: string, index: number = 0) => () => {
@@ -88,7 +99,8 @@ export const ImagesMap = () => {
 				width: width,
 				height: height,
 				left: x,
-				top: y
+				top: y,
+				link: ''
 			};
 			mapAreaNew = [...mapArea, newArea];
 		} else {
@@ -97,6 +109,7 @@ export const ImagesMap = () => {
 		}
 		setMapArea(mapAreaNew);
 		setMapAreaString(JSON.stringify(formarMapArea(mapAreaNew)));
+		setMapAreaFormatString(JSON.stringify(formarMapArea(mapAreaNew), null, 4));
 	}
 
 
@@ -104,14 +117,15 @@ export const ImagesMap = () => {
 		setCrop(percentCrop);
 	}
 
-	const onMapClick = (index: number) => {
-		const tip = `click map${index + 1}`;
+	const onMapClick = useCallback((index: number) => {
+		const data = mapArea[index];
+		const tip = `click map ${data.link || (index + 1)}`;
 		console.log(tip);
 		alert(tip);
-	}
+	}, [mapArea]);
 
 
-	const ImageMapComponent = React.useMemo(() => <ImageMap className="usage-map" src={img} map={formarMapArea(mapArea)} onMapClick={onMapClick} />, [mapArea, img]);
+	const ImageMapComponent = React.useMemo(() => <ImageMap className="usage-map" src={img} map={formarMapArea(mapArea)} onMapClick={onMapClick} />, [mapArea, img, onMapClick]);
 
 	return (
 		<div className="images-map-content">
@@ -164,6 +178,10 @@ export const ImagesMap = () => {
 									<label>top: </label>
 									<input value={map.top} type="number" onChange={setMap('top', index)} />
 								</div>
+								<div className="setting-box-item">
+									<label>link: </label>
+									<input value={map.link} type="text" onChange={setMap('link', index)} />
+								</div>
 							</div>
 							<i className="cad-iconfont icon-sub" onClick={addSubArea('sub', index)} />
 						</div>
@@ -174,6 +192,9 @@ export const ImagesMap = () => {
 				<button className="cad-iconfont icon-dotted-box" onClick={addSubArea('add')}>Add map</button>
 				<CopyToClipboard text={mapAreaString}>
 					<button className="cad-iconfont icon-copy" >Copy</button>
+				</CopyToClipboard>
+				<CopyToClipboard text={mapAreaFormatString}>
+					<button className="cad-iconfont icon-copy" >Format copy</button>
 				</CopyToClipboard>
 				<button className="cad-iconfont icon-image">
 					<input

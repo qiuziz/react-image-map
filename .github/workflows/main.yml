@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - develop
 
 jobs:
   build:
@@ -21,3 +21,6 @@ jobs:
         BRANCH: gh-pages
         FOLDER: build
         BUILD_SCRIPT: npm install && npm run build
+     
+    - name: delete deploy branch
+      run: git push --delete "https://${{ secrets.ACCESS_TOKEN }}@${{ secrets.GIT_REF }}" deploy

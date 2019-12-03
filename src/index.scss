@@ -27,6 +27,11 @@ li {
 	list-style: none;
 }
 
+input:focus {
+	outline-offset: 0;
+	outline: none;
+}
+
 button {
 	display: inline-block;
   cursor: pointer;
