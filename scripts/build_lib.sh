@@ -40,5 +40,6 @@ function build() {
 
 }
 
-build $@
+npm who am i
 
+build $@
