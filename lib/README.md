@@ -1,4 +1,7 @@
 ## ImageMap
+[![Build Status](https://travis-ci.org/qiuziz/react-image-map.svg?branch=master)](https://travis-ci.org/qiuziz/react-image-map)
+![npm](https://img.shields.io/npm/v/@qiuz/react-image-map)
+![David](https://img.shields.io/david/dev/qiuziz/react-image-map)
 
 > A React Image Map
 
@@ -10,7 +13,16 @@ $ npm install @qiuz/react-image-map
 ```
 
 ### Get mapArea
-open [https://qiuziz.github.io/react-image-map](https://qiuziz.github.io/react-image-map/)
+
+open
+
+[https://qiuziz.github.io/react-image-map](https://qiuziz.github.io/react-image-map/)
+
+or
+
+[https://qiuziz.github.io/react-image-map?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg](https://qiuziz.github.io/react-image-map?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
+
+![page](https://raw.githubusercontent.com/qiuziz/react-image-map/master/src/assets/images/page.png)
 
 ### Usage
 ```js

@@ -1,6 +1,6 @@
 {
   "name": "@qiuz/react-image-map",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "homepage": "https://qiuziz.github.io/react-image-map",
   "description": "基于 React 的图片热区高效设置",
   "license": "MIT",
@@ -32,7 +32,8 @@
     "test": "node scripts/test.js",
     "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
     "lib": "sh scripts/build_lib.sh",
-    "deploy": "sh scripts/deploy.sh"
+    "deploy": "sh scripts/deploy.sh",
+    "cz": "git-cz"
   },
   "typings": "index.d.ts",
   "dependencies": {
@@ -41,7 +42,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.4.3",
-    "@qiuz/react-image-map": "0.1.22",
+    "@qiuz/react-image-map": "0.1.23",
     "@svgr/webpack": "4.1.0",
     "@types/node": "12.0.7",
     "@types/qs": "^6.5.3",
@@ -60,7 +61,10 @@
     "babel-preset-react-app": "^9.0.0",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
+    "commitizen": "^4.0.3",
     "css-loader": "2.1.1",
+    "cz-conventional-changelog": "^3.0.2",
+    "cz-customizable": "^6.2.0",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
     "enzyme": "^3.10.0",
@@ -179,5 +183,10 @@
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   }
 }
