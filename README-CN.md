@@ -3,34 +3,31 @@
 ![npm](https://img.shields.io/npm/v/@qiuz/react-image-map)
 ![David](https://img.shields.io/david/dev/qiuziz/react-image-map)
 
-> A percent react image map compnent
+> 一个使用百分比添加热区的`React`组件
 
-
-[简体中文](https://github.com/qiuziz/react-image-map/blob/master/README-CN.md)
-
-### Installation
+### 安装
 ```sh
 $ yarn add @qiuz/react-image-map
 # or
 $ npm install @qiuz/react-image-map
 ```
 
-### Get mapArea
+### 获取热区配置
 
-open [https://qiuziz.github.io/react-image-map](https://qiuziz.github.io/react-image-map/) 
+打开 [https://qiuziz.github.io/react-image-map](https://qiuziz.github.io/react-image-map/) 
 
-or with `imgSrc`  [https://qiuziz.github.io/react-image-map?imgSrc=img_address](https://qiuziz.github.io/react-image-map?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
+或者 传递`imgSrc`参数  [https://qiuziz.github.io/react-image-map?imgSrc=img_address](https://qiuziz.github.io/react-image-map?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
 
 
 
 ![page](https://raw.githubusercontent.com/qiuziz/react-image-map/master/src/assets/images/page.png)
 
-### Usage
+### 使用
 ```js
 import { ImageMap } from '@qiuz/react-image-map'
 ```
 
-### Example
+### 示例
 ```jsx
 const img = 'https://images.app.goo.gl/STr3xKQMbdjLketR7';
 
