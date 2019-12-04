@@ -158,10 +158,10 @@ export const ImagesMap = () => {
 							img &&
 							mapArea.map((map: any, index: number) =>
 								<span className="crop-item" key={index} style={{
-									width: `${map.width}%`,
-									height: `${map.height}%`,
-									left: `${map.left}%`,
-									top: `${map.top}%`,
+									width: `${parseFloat(map.width)}%`,
+									height: `${parseFloat(map.height)}%`,
+									left: `${parseFloat(map.left)}%`,
+									top: `${parseFloat(map.top)}%`,
 								}} />
 							)
 						}
