@@ -44,7 +44,7 @@ const formarMapArea = (mapArea: any): AreaType[] => {
 	return mapArea.map((area: AreaType & {[k: string]: string}) => {
 		let result: any = {};
 		Object.keys(area).forEach((key: string) => {
-			result[key] = key !== 'href' ? `${area[key]}%` : area[key];
+			result[key] = key !== 'href' ? `${parseFloat(area[key])}%` : area[key];
 		});
 		return result;
 	});
