@@ -42,3 +42,9 @@ button {
 	background-color: #fff;
 	padding: 10px;
 }
+
+textarea {
+	&:focus {
+		outline: none;
+	}
+}

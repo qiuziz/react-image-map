@@ -125,6 +125,18 @@ export const ImagesMap = () => {
 		alert(tip);
 	};
 
+	const toSetMap = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+		const value: string = e.target.value;
+		let result = [];
+		try {
+			result = JSON.parse(value);
+			setMapArea(result);
+			setMapAreaString(value);
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
 
 	// @ts-ignore
 	const ImageMapComponent = React.useMemo(() => <ImageMap className="usage-map" src={img} map={formarMapArea(mapArea)} onMapClick={onMapClick} />, [mapArea, img]);
@@ -166,19 +178,19 @@ export const ImagesMap = () => {
 							<div className="setting-box">
 								<div className="setting-box-item">
 									<label>width: </label>
-									<input value={map.width} type="number" onChange={setMap('width', index)} />
+									<input value={parseFloat(map.width)} type="number" onChange={setMap('width', index)} />
 								</div>
 								<div className="setting-box-item">
 									<label>height: </label>
-									<input value={map.height} type="number" onChange={setMap('height', index)} />
+									<input value={parseFloat(map.height)} type="number" onChange={setMap('height', index)} />
 								</div>
 								<div className="setting-box-item">
 									<label>left: </label>
-									<input value={map.left} type="number" onChange={setMap('left', index)} />
+									<input value={parseFloat(map.left)} type="number" onChange={setMap('left', index)} />
 								</div>
 								<div className="setting-box-item">
 									<label>top: </label>
-									<input value={map.top} type="number" onChange={setMap('top', index)} />
+									<input value={parseFloat(map.top)} type="number" onChange={setMap('top', index)} />
 								</div>
 								<div className="setting-box-item">
 									<label>href: </label>
@@ -207,7 +219,7 @@ export const ImagesMap = () => {
 					/>Select images
 				</button>
 			</div>
-			<textarea cols={3} value={mapAreaString} readOnly />
+			<textarea cols={3} value={mapAreaString} onChange={toSetMap} />
 
 			<h3>Click on you set of map：</h3>
 			<div className="usage">
