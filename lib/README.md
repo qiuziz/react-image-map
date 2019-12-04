@@ -3,7 +3,10 @@
 ![npm](https://img.shields.io/npm/v/@qiuz/react-image-map)
 ![David](https://img.shields.io/david/dev/qiuziz/react-image-map)
 
-> A percent react image map compnent 
+> A percent react image map compnent
+
+
+[简体中文](https://github.com/qiuziz/react-image-map/blob/master/README-CN.md)
 
 ### Installation
 ```sh
