@@ -41,7 +41,7 @@ const CROP: ReactCrop.Crop = {
 };
 
 const formarMapArea = (mapArea: any): AreaType[] => {
-	return mapArea.map((area: AreaType & {[k: string]: string}) => {
+	return mapArea.map((area: AreaType & { [k: string]: string }) => {
 		let result: any = {};
 		Object.keys(area).forEach((key: string) => {
 			result[key] = key !== 'href' ? `${parseFloat(area[key])}%` : area[key];
@@ -58,7 +58,7 @@ export const ImagesMap = () => {
 	const [crop, setCrop] = useState<ReactCrop.Crop>(CROP);
 	const [mapAreaString, setMapAreaString] = useState<string>(JSON.stringify(formarMapArea(mapArea)));
 	const [mapAreaFormatString, setMapAreaFormatString] = useState<string>(JSON.stringify(formarMapArea(mapArea), null, 4));
-	
+
 	useEffect(() => {
 		const cropBoxEle: HTMLElement | null = document.querySelector('.ReactCrop');
 		const handle = (e: any) => {
@@ -75,14 +75,14 @@ export const ImagesMap = () => {
 
 	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		if (e.target.files && e.target.files.length > 0) {
-      const reader: FileReader = new FileReader();
-      reader.addEventListener('load', () => {
+			const reader: FileReader = new FileReader();
+			reader.addEventListener('load', () => {
 				setImg(reader.result as string);
 				setMapArea([]);
 				setCrop(CROP);
-      });
-      reader.readAsDataURL(e.target.files[0]);
-    }
+			});
+			reader.readAsDataURL(e.target.files[0]);
+		}
 	}
 
 	const setMap = (type: string, index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -131,7 +131,8 @@ export const ImagesMap = () => {
 		try {
 			result = JSON.parse(value);
 			setMapArea(result);
-			setMapAreaString(value);
+			setMapAreaString(JSON.stringify(formarMapArea(result)));
+			setMapAreaFormatString(JSON.stringify(formarMapArea(result), null, 4));
 		} catch (error) {
 			console.log(error);
 		}
@@ -169,7 +170,7 @@ export const ImagesMap = () => {
 
 				</div>
 			</div>
-			
+
 			{
 				img && mapArea.map((map: any, index: number) => {
 					return (
