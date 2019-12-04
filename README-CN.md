@@ -24,7 +24,11 @@ $ npm install @qiuz/react-image-map
 
 ### 使用
 ```js
-import { ImageMap } from '@qiuz/react-image-map'
+import { ImageMap, Area } from '@qiuz/react-image-map';
+
+interface AreaType extends Area {
+	href?: string;
+}
 ```
 
 ### 示例
@@ -33,8 +37,8 @@ const img = 'https://images.app.goo.gl/STr3xKQMbdjLketR7';
 
 const mapArea = [{"left":"0%","top":"6%","height":"12%","width":"33%"}];
 
-const onMapClick = (index: number) => {
-	const tip = `click map${index + 1}`;
+const onMapClick = (area: AreaType, index: number) => {
+	const tip = `click map${area.href || index + 1}`;
 	console.log(tip);
 	alert(tip);
 }

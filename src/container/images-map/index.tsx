@@ -6,7 +6,7 @@
  * @Last Modified time: 2019-12-03 16:15:50
  */
 
-import React, { useCallback } from 'react';
+import React from 'react';
 import './index.scss';
 import ReactCrop from 'react-image-crop';
 import "react-image-crop/dist/ReactCrop.css";
@@ -119,16 +119,15 @@ export const ImagesMap = () => {
 		setCrop(percentCrop);
 	}
 
-	const onMapClick = useCallback((area: Area, index: number) => {
-		const data = mapArea[index];
-		const tip = `click map ${data.href || (index + 1)}`;
+	const onMapClick = (area: AreaType, index: number) => {
+		const tip = `click map ${area.href || (index + 1)}`;
 		console.log(tip, area);
 		alert(tip);
-	}, [mapArea]);
+	};
 
 
 	// @ts-ignore
-	const ImageMapComponent = React.useMemo(() => <ImageMap className="usage-map" src={img} map={formarMapArea(mapArea)} onMapClick={onMapClick} />, [mapArea, img, onMapClick]);
+	const ImageMapComponent = React.useMemo(() => <ImageMap className="usage-map" src={img} map={formarMapArea(mapArea)} onMapClick={onMapClick} />, [mapArea, img]);
 
 	return (
 		<div className="images-map-content">
