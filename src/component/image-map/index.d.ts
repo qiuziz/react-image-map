@@ -19,7 +19,7 @@ export interface ImageMapProps {
 		className?: string;
 		src: string;
 		map?: Area[];
-		onMapClick?: (index: number) => void;
+		onMapClick?: (area: Area, index: number) => void;
   }
 
 export class ImageMap extends React.Component<ImageMapProps> {

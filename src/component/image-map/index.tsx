@@ -8,13 +8,13 @@
 import React from 'react';
 import './index.scss';
 
-import { ImageMapProps } from './index.d';
+import { ImageMapProps, Area } from './index.d';
 
 export const ImageMap = (props: ImageMapProps) => {
-	const { className = '', src = '', map = [], onMapClick = (index: number) => {} } = props;
+	const { className = '', src = '', map = [], onMapClick = (area: Area, index: number) => {} } = props;
 
-	const mapClick = (index: number) => () => {
-		onMapClick(index);
+	const mapClick = (area: Area, index: number) => () => {
+		onMapClick(area, index);
 	}
 
 	return (
@@ -23,7 +23,7 @@ export const ImageMap = (props: ImageMapProps) => {
 			{
 				map.map((area: any, index: number) => {
 					return (
-						<span key={index} style={area} onClick={mapClick(index)}/>
+						<span key={index} style={area} onClick={mapClick(area, index)}/>
 					)
 				})
 			}

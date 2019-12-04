@@ -12,13 +12,15 @@ import ReactCrop from 'react-image-crop';
 import "react-image-crop/dist/ReactCrop.css";
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { useState, useEffect } from 'react';
-import { ImageMap, Area } from '@qiuz/react-image-map';
+// import { ImageMap, Area } from '@qiuz/react-image-map';
+import { ImageMap } from 'component';
+import { Area } from 'component/image-map/index.d';
 
 import EXAMPLE from './images/example.png';
 import { getUrlParams } from 'common';
 
 interface AreaType extends Area {
-	link?: string;
+	href?: string;
 }
 const EXAMPLE_AREA: AreaType[] = [
 	{
@@ -26,7 +28,7 @@ const EXAMPLE_AREA: AreaType[] = [
 		"top": "6",
 		"height": "12",
 		"width": "33",
-		"link": ''
+		"href": ''
 	}
 ];
 
@@ -42,7 +44,7 @@ const formarMapArea = (mapArea: any): AreaType[] => {
 	return mapArea.map((area: AreaType & {[k: string]: string}) => {
 		let result: any = {};
 		Object.keys(area).forEach((key: string) => {
-			result[key] = key !== 'link' ? `${area[key]}%` : area[key];
+			result[key] = key !== 'href' ? `${area[key]}%` : area[key];
 		});
 		return result;
 	});
@@ -100,7 +102,7 @@ export const ImagesMap = () => {
 				height: height,
 				left: x,
 				top: y,
-				link: ''
+				href: ''
 			};
 			mapAreaNew = [...mapArea, newArea];
 		} else {
@@ -117,14 +119,15 @@ export const ImagesMap = () => {
 		setCrop(percentCrop);
 	}
 
-	const onMapClick = useCallback((index: number) => {
+	const onMapClick = useCallback((area: Area, index: number) => {
 		const data = mapArea[index];
-		const tip = `click map ${data.link || (index + 1)}`;
-		console.log(tip);
+		const tip = `click map ${data.href || (index + 1)}`;
+		console.log(tip, area);
 		alert(tip);
 	}, [mapArea]);
 
 
+	// @ts-ignore
 	const ImageMapComponent = React.useMemo(() => <ImageMap className="usage-map" src={img} map={formarMapArea(mapArea)} onMapClick={onMapClick} />, [mapArea, img, onMapClick]);
 
 	return (
@@ -179,8 +182,8 @@ export const ImagesMap = () => {
 									<input value={map.top} type="number" onChange={setMap('top', index)} />
 								</div>
 								<div className="setting-box-item">
-									<label>link: </label>
-									<input value={map.link} type="text" onChange={setMap('link', index)} />
+									<label>href: </label>
+									<input value={map.href} type="text" onChange={setMap('href', index)} />
 								</div>
 							</div>
 							<i className="cad-iconfont icon-sub" onClick={addSubArea('sub', index)} />
