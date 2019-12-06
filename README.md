@@ -1,5 +1,6 @@
 ## ImageMap
-[![Build Status](https://travis-ci.org/qiuziz/react-image-map.svg?branch=master)](https://travis-ci.org/qiuziz/react-image-map)
+
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/qiuziz/react-image-map/CI/master)
 ![npm](https://img.shields.io/npm/v/@qiuz/react-image-map)
 ![David](https://img.shields.io/david/dev/qiuziz/react-image-map)
 
