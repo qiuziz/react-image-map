@@ -1,7 +1,7 @@
 ## ImageMap
-[![Build Status](https://travis-ci.org/qiuziz/react-image-map.svg?branch=master)](https://travis-ci.org/qiuziz/react-image-map)
-![npm](https://img.shields.io/npm/v/@qiuz/react-image-map)
-![David](https://img.shields.io/david/dev/qiuziz/react-image-map)
+
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/qiuziz/react-image-map/CI?label=Github%20Actions)](https://github.com/qiuziz/react-image-map/actions?query=workflow%3ACI)
+[![npm](https://img.shields.io/npm/v/@qiuz/react-image-map)](https://www.npmjs.com/package/@qiuz/react-image-map)
 
 > A percent react image map compnent
 
@@ -27,7 +27,11 @@ or with `imgSrc`  [https://qiuziz.github.io/react-image-map?imgSrc=img_address](
 
 ### Usage
 ```js
-import { ImageMap } from '@qiuz/react-image-map'
+import { ImageMap, Area } from '@qiuz/react-image-map'
+
+interface AreaType extends Area {
+	href?: string;
+}
 ```
 
 ### Example
@@ -36,8 +40,8 @@ const img = 'https://images.app.goo.gl/STr3xKQMbdjLketR7';
 
 const mapArea = [{"left":"0%","top":"6%","height":"12%","width":"33%"}];
 
-const onMapClick = (index: number) => {
-	const tip = `click map${index + 1}`;
+const onMapClick = (area: AreaType, index: number) => {
+	const tip = `click map${area.href || index + 1}`;
 	console.log(tip);
 	alert(tip);
 }
