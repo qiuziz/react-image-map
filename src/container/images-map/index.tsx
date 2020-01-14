@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2019-12-03 16:15:50
+ * @Last Modified time: 2020-01-14 10:59:29
  */
 
 import React from 'react';
@@ -50,7 +50,18 @@ const formarMapArea = (mapArea: any): AreaType[] => {
 	});
 }
 
-const { imgSrc } = getUrlParams();
+// JSON数据处理
+const trycatchHandle = (jsonStr: string) => {
+	let result = [];
+	try {
+		result = JSON.parse(jsonStr);
+	} catch (err) {
+		console.log(err);
+	}
+	return result;
+}
+
+const { imgSrc, postmessage } = getUrlParams();
 
 export const ImagesMap = () => {
 	const [img, setImg] = useState<string>(imgSrc || EXAMPLE);
@@ -58,6 +69,16 @@ export const ImagesMap = () => {
 	const [crop, setCrop] = useState<ReactCrop.Crop>(CROP);
 	const [mapAreaString, setMapAreaString] = useState<string>(JSON.stringify(formarMapArea(mapArea)));
 	const [mapAreaFormatString, setMapAreaFormatString] = useState<string>(JSON.stringify(formarMapArea(mapArea), null, 4));
+
+	postmessage && window.addEventListener("message", (event: any) => {
+		console.log(event);
+		const { data } = event;
+		if (!data) return;
+		const mapAreaData = trycatchHandle(data);
+		setMapArea(mapAreaData);
+		setMapAreaString(JSON.stringify(formarMapArea(mapAreaData)));
+		setMapAreaFormatString(JSON.stringify(formarMapArea(mapAreaData), null, 4));
+	}, false);
 
 	useEffect(() => {
 		const cropBoxEle: HTMLElement | null = document.querySelector('.ReactCrop');
