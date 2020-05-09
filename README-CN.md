@@ -32,6 +32,7 @@ interface AreaType extends Area {
 ```
 
 ### 示例
+[在线示例](https://codesandbox.io/s/silent-bash-c6zwx)
 ```jsx
 const img = 'https://images.app.goo.gl/STr3xKQMbdjLketR7';
 
