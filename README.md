@@ -49,12 +49,12 @@ const onMapClick = (area: AreaType, index: number) => {
 <ImageMap
 	className="usage-map"
 	src={img}
-	map={formarMapArea(mapArea)}
+	map={mapArea}
 	onMapClick={onMapClick}
 />
 
 // in hooks
-const ImageMapComponent = React.useMemo(() => <ImageMap className="usage-map" src={img} map={formarMapArea(mapArea)} onMapClick={onMapClick} />, [mapArea, img]);
+const ImageMapComponent = React.useMemo(() => <ImageMap className="usage-map" src={img} map={mapArea} onMapClick={onMapClick} />, [mapArea, img]);
 
 return (
 	...

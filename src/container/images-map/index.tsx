@@ -40,7 +40,7 @@ const CROP: ReactCrop.Crop = {
 	width: 33,
 };
 
-const formarMapArea = (mapArea: any): AreaType[] => {
+const formatMapArea = (mapArea: any): AreaType[] => {
 	return mapArea.map((area: AreaType & { [k: string]: string }) => {
 		let result: any = {};
 		Object.keys(area).forEach((key: string) => {
@@ -67,8 +67,8 @@ export const ImagesMap = () => {
 	const [img, setImg] = useState<string>(imgSrc || EXAMPLE);
 	const [mapArea, setMapArea] = useState<AreaType[]>(EXAMPLE_AREA);
 	const [crop, setCrop] = useState<ReactCrop.Crop>(CROP);
-	const [mapAreaString, setMapAreaString] = useState<string>(JSON.stringify(formarMapArea(mapArea)));
-	const [mapAreaFormatString, setMapAreaFormatString] = useState<string>(JSON.stringify(formarMapArea(mapArea), null, 4));
+	const [mapAreaString, setMapAreaString] = useState<string>(JSON.stringify(formatMapArea(mapArea)));
+	const [mapAreaFormatString, setMapAreaFormatString] = useState<string>(JSON.stringify(formatMapArea(mapArea), null, 4));
 
 	postmessage && window.addEventListener("message", (event: any) => {
 		console.log(event);
@@ -76,8 +76,8 @@ export const ImagesMap = () => {
 		if (!data) return;
 		const mapAreaData = trycatchHandle(data);
 		setMapArea(mapAreaData);
-		setMapAreaString(JSON.stringify(formarMapArea(mapAreaData)));
-		setMapAreaFormatString(JSON.stringify(formarMapArea(mapAreaData), null, 4));
+		setMapAreaString(JSON.stringify(formatMapArea(mapAreaData)));
+		setMapAreaFormatString(JSON.stringify(formatMapArea(mapAreaData), null, 4));
 	}, false);
 
 	useEffect(() => {
@@ -110,8 +110,8 @@ export const ImagesMap = () => {
 		const value = e.target.value;
 		const mapAreaNew = mapArea.map((map: any, idx: number) => index === idx ? { ...map, [type]: value } : map);
 		setMapArea(mapAreaNew);
-		setMapAreaString(JSON.stringify(formarMapArea(mapAreaNew)));
-		setMapAreaFormatString(JSON.stringify(formarMapArea(mapAreaNew), null, 4));
+		setMapAreaString(JSON.stringify(formatMapArea(mapAreaNew)));
+		setMapAreaFormatString(JSON.stringify(formatMapArea(mapAreaNew), null, 4));
 	}
 
 	const addSubArea = (type: string, index: number = 0) => () => {
@@ -131,8 +131,8 @@ export const ImagesMap = () => {
 			mapAreaNew = [...mapArea];
 		}
 		setMapArea(mapAreaNew);
-		setMapAreaString(JSON.stringify(formarMapArea(mapAreaNew)));
-		setMapAreaFormatString(JSON.stringify(formarMapArea(mapAreaNew), null, 4));
+		setMapAreaString(JSON.stringify(formatMapArea(mapAreaNew)));
+		setMapAreaFormatString(JSON.stringify(formatMapArea(mapAreaNew), null, 4));
 	}
 
 
@@ -152,8 +152,8 @@ export const ImagesMap = () => {
 		try {
 			result = JSON.parse(value);
 			setMapArea(result);
-			setMapAreaString(JSON.stringify(formarMapArea(result)));
-			setMapAreaFormatString(JSON.stringify(formarMapArea(result), null, 4));
+			setMapAreaString(JSON.stringify(formatMapArea(result)));
+			setMapAreaFormatString(JSON.stringify(formatMapArea(result), null, 4));
 		} catch (error) {
 			console.log(error);
 		}
@@ -161,7 +161,7 @@ export const ImagesMap = () => {
 
 
 	// @ts-ignore
-	const ImageMapComponent = React.useMemo(() => <ImageMap className="usage-map" src={img} map={formarMapArea(mapArea)} onMapClick={onMapClick} />, [mapArea, img]);
+	const ImageMapComponent = React.useMemo(() => <ImageMap className="usage-map" src={img} map={formatMapArea(mapArea)} onMapClick={onMapClick} />, [mapArea, img]);
 
 	return (
 		<div className="images-map-content">
