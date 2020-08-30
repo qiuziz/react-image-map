@@ -23,7 +23,7 @@ export const ImageMap = (props: ImageMapProps) => {
 			{
 				map.map((area: any, index: number) => {
 					return (
-						<span key={index} style={area} onClick={mapClick(area, index)}/>
+						<span key={index} className={`${className}_map_span-${index}`} style={area} onClick={mapClick(area, index)}/>
 					)
 				})
 			}
