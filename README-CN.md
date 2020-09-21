@@ -31,6 +31,18 @@ interface AreaType extends Area {
 }
 ```
 
+
+## Props
+
+| Name         | Type                                      | Default |
+| :----------- | :---------------------------------------- | :------ |
+| `className`  | `String`                                  | `''`    |
+| `src`        | `String`                                  | `''`    |
+| `onClick`    | `() => void`                              | `noop`  |
+| `onMapClick` | `(area: AreaType, index: number) => void` | `noop`  |
+| `map`        | `Area[]`                                  | `[]`    |
+
+
 ### 示例
 [在线示例](https://codesandbox.io/s/silent-bash-c6zwx)
 ```jsx
