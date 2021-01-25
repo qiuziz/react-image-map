@@ -5,10 +5,10 @@
 
 > A percent react image map compnent
 
-
 [简体中文](https://github.com/qiuziz/react-image-map/blob/master/README-CN.md)
 
 ### Installation
+
 ```sh
 $ yarn add @qiuz/react-image-map
 # or
@@ -17,22 +17,31 @@ $ npm install @qiuz/react-image-map
 
 ### Get mapArea
 
-open [https://qiuziz.github.io/react-image-map](https://qiuziz.github.io/react-image-map/) 
+open [http://blog.qiuz.site/widget/react-image-map/](http://blog.qiuz.site/widget/react-image-map//)
 
-or with `imgSrc`  [https://qiuziz.github.io/react-image-map?imgSrc=img_address](https://qiuziz.github.io/react-image-map?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
-
-
+or with `imgSrc` [http://blog.qiuz.site/widget/react-image-map/?imgSrc=img_address](http://blog.qiuz.site/widget/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
 
 ![page](https://raw.githubusercontent.com/qiuziz/react-image-map/master/src/assets/images/page.png)
 
 ### Usage
+
 ```js
-import { ImageMap, Area } from '@qiuz/react-image-map'
+import {ImageMap, Area} from '@qiuz/react-image-map';
 
 interface AreaType extends Area {
-	href?: string;
+  href?: string;
 }
 ```
+
+## Props
+
+| Name         | Type                                      | Default |
+| :----------- | :---------------------------------------- | :------ |
+| `className`  | `String`                                  | `''`    |
+| `src`        | `String`                                  | `''`    |
+| `onClick`    | `() => void`                              | `noop`  |
+| `onMapClick` | `(area: AreaType, index: number) => void` | `noop`  |
+| `map`        | `Area[]`                                  | `[]`    |
 
 ### Example
 
