@@ -344,6 +344,13 @@ module.exports = function (webpackEnv) {
                         }
                       }
                     }
+									],
+									[
+                    'import',
+                    {
+                      libraryName: 'antd',
+                      style: 'css'
+                    }
                   ]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
@@ -351,7 +358,7 @@ module.exports = function (webpackEnv) {
                 // directory for faster rebuilds.
                 cacheDirectory: true,
                 cacheCompression: isEnvProduction,
-                compact: isEnvProduction
+                compact: isEnvProduction,
               }
             },
             // Process any JS outside of the app with Babel.
