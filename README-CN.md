@@ -14,9 +14,9 @@ $ npm install @qiuz/react-image-map
 
 ### 获取热区配置
 
-打开 [https://qiuziz.github.io/react-image-map](https://qiuziz.github.io/react-image-map/) 
+打开 [http://blog.qiuz.site/widget/react-image-map/](http://blog.qiuz.site/widget/react-image-map/) 
 
-或者 传递`imgSrc`参数  [https://qiuziz.github.io/react-image-map?imgSrc=img_address](https://qiuziz.github.io/react-image-map?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
+或者 传递`imgSrc`参数  [http://blog.qiuz.site/widget/react-image-map/?imgSrc=img_address](http://blog.qiuz.site/widget/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
 
 
 
