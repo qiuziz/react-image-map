@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/react-image-map/static/css/main.c4693e44.chunk.css",
-    "main.js": "/react-image-map/static/js/main.2976e5dc.chunk.js",
+    "main.js": "/react-image-map/static/js/main.a5820398.chunk.js",
     "runtime~main.js": "/react-image-map/static/js/runtime~main.f72a9f06.js",
-    "static/css/2.08cc6f02.chunk.css": "/react-image-map/static/css/2.08cc6f02.chunk.css",
+    "static/css/2.19e91204.chunk.css": "/react-image-map/static/css/2.19e91204.chunk.css",
     "static/js/2.7ea3944f.chunk.js": "/react-image-map/static/js/2.7ea3944f.chunk.js",
     "index.html": "/react-image-map/index.html",
-    "precache-manifest.9d48da6437821f0405ba2ba8784e88d8.js": "/react-image-map/precache-manifest.9d48da6437821f0405ba2ba8784e88d8.js",
+    "precache-manifest.66c25ac4f8038f43288e23a8f9b85ef5.js": "/react-image-map/precache-manifest.66c25ac4f8038f43288e23a8f9b85ef5.js",
     "service-worker.js": "/react-image-map/service-worker.js",
     "static/media/example.png": "/react-image-map/static/media/example.3373acbe.png"
   }
