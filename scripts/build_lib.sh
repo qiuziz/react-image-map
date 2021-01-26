@@ -36,7 +36,7 @@ function build() {
 
 	git push
 
-	yarn deploy
+	yarn pages
 
 }
 
