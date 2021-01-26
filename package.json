@@ -1,6 +1,6 @@
 {
   "name": "@qiuz/react-image-map",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "homepage": "https://qiuziz.github.io/react-image-map",
   "description": "基于 React 的图片热区高效设置",
   "license": "MIT",
@@ -32,8 +32,8 @@
     "test": "node scripts/test.js",
     "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
     "lib": "sh scripts/build_lib.sh",
-		"deploy": "sh scripts/deploy.sh",
-		"pages": "yarn build && yarn gh-pages -d build -t -m 'docs: update'",
+    "deploy": "sh scripts/deploy.sh",
+    "pages": "yarn build && yarn gh-pages -d build -t -m 'docs: update'",
     "cz": "git-cz"
   },
   "typings": "index.d.ts",
