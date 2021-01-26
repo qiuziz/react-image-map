@@ -44,7 +44,7 @@
   "devDependencies": {
     "@ant-design/icons": "4.0.0",
     "@babel/core": "7.4.3",
-    "@qiuz/react-image-map": "1.0.9",
+    "@qiuz/react-image-map": "1.0.11",
     "@svgr/webpack": "4.1.0",
     "@types/node": "12.0.7",
     "@types/qs": "^6.5.3",
