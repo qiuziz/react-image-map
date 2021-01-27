@@ -2,7 +2,7 @@
  * @Author: qiuz
  * @Date: 2019-11-01 14:38:25
  * @Last Modified by: qiuz
- * @Last Modified time: 2021-01-27 23:50:01
+ * @Last Modified time: 2021-01-28 00:13:31
  */
 
 import React from 'react';
@@ -32,7 +32,7 @@ export const ImageMap = (props: ImageMapProps) => {
         return (
           <span
             key={index}
-            className={`${className}_map_span-${index}`}
+            className={`image-map__map ${className}_map_span-${index}`}
             {...restMapProps}
             style={{ width, height, left, top, ...style }}
             onClick={mapClick(area, index)}
