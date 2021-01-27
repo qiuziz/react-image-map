@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "51752eb9b0d14212bfde925561fbe571",
+    "revision": "06444468672dfbf48dc315eb9a061662",
     "url": "/react-image-map/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-image-map/static/css/2.19e91204.chunk.css"
   },
   {
-    "revision": "1a6d200697a5edabed3b",
-    "url": "/react-image-map/static/css/main.a5521001.chunk.css"
+    "revision": "8009be9134126ddb4b9f",
+    "url": "/react-image-map/static/css/main.62f738ac.chunk.css"
   },
   {
     "revision": "37c294cab85b27c80519",
     "url": "/react-image-map/static/js/2.1471937d.chunk.js"
   },
   {
-    "revision": "1a6d200697a5edabed3b",
-    "url": "/react-image-map/static/js/main.a52d5cc4.chunk.js"
+    "revision": "8009be9134126ddb4b9f",
+    "url": "/react-image-map/static/js/main.3ab2c3dd.chunk.js"
   },
   {
     "revision": "ba89f44dc06096197a7a",
