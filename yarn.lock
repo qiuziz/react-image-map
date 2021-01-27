@@ -1426,10 +1426,10 @@
   resolved "https://registry.npm.taobao.org/@nodelib/fs.stat/download/@nodelib/fs.stat-1.1.3.tgz?cache=0&sync_timestamp=1609074440744&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40nodelib%2Ffs.stat%2Fdownload%2F%40nodelib%2Ffs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha1-K1o6s/kYzKSKjHVMCBaOPwPrphs=
 
-"@qiuz/react-image-map@1.0.12":
-  version "1.0.12"
-  resolved "https://registry.npmjs.org/@qiuz/react-image-map/-/react-image-map-1.0.12.tgz#06ee4f9a845d587637266a0564973193287913b3"
-  integrity sha512-w1Wxv9VGHb6U8HVhsE8H4pTql28wQUGq3SSuHvg8EnW0y6L0imRnS8xRsc5N+/dG0aWTGRKO4rxnf94Y9RezPg==
+"@qiuz/react-image-map@1.0.13":
+  version "1.0.13"
+  resolved "https://registry.npmjs.org/@qiuz/react-image-map/-/react-image-map-1.0.13.tgz#9ee409c0b078ae4a25c5c370f664528014cfc1d4"
+  integrity sha512-n8lbEYUOX+NerQdaMKAQ+iI4A97CgyFtsgdDTMd7oXtj3p/Qv8lTW4uk2U4+MFMnSPjXapNfvbPs+r0sWRctjg==
   dependencies:
     react "^16.8.6"
     react-dom "^16.8.6"
