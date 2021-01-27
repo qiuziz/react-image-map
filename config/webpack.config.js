@@ -262,11 +262,7 @@ module.exports = function (webpackEnv) {
         .map((ext) => `.${ext}`)
         .filter((ext) => useTypeScript || !ext.includes('ts')),
       alias: {
-        // '@components': path.resolve(__dirname, '../src/components'),
-        // '@container': path.resolve(__dirname, '../src/container'),
-        // '@common': path.resolve(__dirname, '../src/common'),
-        // '@assets': path.resolve(__dirname, '../src/assets'),
-        // '@service': path.resolve(__dirname, '../src/service'),
+        'react-image-map': path.resolve(__dirname, '../src/lib'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

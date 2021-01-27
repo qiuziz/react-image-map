@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2021-01-26 00:54:00
+ * @Last Modified time: 2021-01-27 23:34:23
  */
 
 import React from 'react';
@@ -14,23 +14,20 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { useState, useEffect } from 'react';
 import { Button, message } from 'antd';
 import { QuestionOutlined } from '@ant-design/icons';
-// import { ImageMap, Area } from '@qiuz/react-image-map';
-import { ImageMap } from 'component';
-import { Area } from 'component/image-map/index.d';
+import { ImageMap, Area } from 'react-image-map';
 
 import EXAMPLE from './images/example.png';
 import { getUrlParams } from 'common';
 
-interface AreaType extends Area {
-  href?: string;
-}
-const EXAMPLE_AREA: AreaType[] = [
+const EXAMPLE_AREA: any[] = [
   {
-    left: '0',
-    top: '6',
-    height: '12',
-    width: '33',
-    href: ''
+    left: '0%',
+    top: '6%',
+    height: '12%',
+    width: '33%',
+    href: '',
+    style: { background: 'rgba(255, 0, 0, 0.5)' },
+    onMouseOver: () => message.info('map onMouseOver')
   }
 ];
 
@@ -42,17 +39,7 @@ const CROP: ReactCrop.Crop = {
   width: 33
 };
 
-const formatMapArea = (mapArea: any): AreaType[] => {
-  return mapArea.map((area: AreaType & { [k: string]: string }) => {
-    let result: any = {};
-    Object.keys(area).forEach((key: string) => {
-      result[key] = key !== 'href' ? `${parseFloat(area[key])}%` : area[key];
-    });
-    return result;
-  });
-};
-
-// JSON数据处理
+// JSON parse
 const trycatchHandle = (jsonStr: string) => {
   let result = [];
   try {
@@ -67,13 +54,11 @@ const { imgSrc, postmessage } = getUrlParams();
 
 export const ImagesMap = () => {
   const [img, setImg] = useState<string>(imgSrc || EXAMPLE);
-  const [mapArea, setMapArea] = useState<AreaType[]>(EXAMPLE_AREA);
+  const [mapArea, setMapArea] = useState<Area[]>(EXAMPLE_AREA);
   const [crop, setCrop] = useState<ReactCrop.Crop>(CROP);
-  const [mapAreaString, setMapAreaString] = useState<string>(
-    JSON.stringify(formatMapArea(mapArea))
-  );
+  const [mapAreaString, setMapAreaString] = useState<string>(JSON.stringify(mapArea));
   const [mapAreaFormatString, setMapAreaFormatString] = useState<string>(
-    JSON.stringify(formatMapArea(mapArea), null, 4)
+    JSON.stringify(mapArea, null, 4)
   );
 
   postmessage &&
@@ -85,8 +70,8 @@ export const ImagesMap = () => {
         if (!data) return;
         const mapAreaData = trycatchHandle(data);
         setMapArea(mapAreaData);
-        setMapAreaString(JSON.stringify(formatMapArea(mapAreaData)));
-        setMapAreaFormatString(JSON.stringify(formatMapArea(mapAreaData), null, 4));
+        setMapAreaString(JSON.stringify(mapAreaData));
+        setMapAreaFormatString(JSON.stringify(mapAreaData, null, 4));
       },
       false
     );
@@ -123,8 +108,8 @@ export const ImagesMap = () => {
       index === idx ? { ...map, [type]: value } : map
     );
     setMapArea(mapAreaNew);
-    setMapAreaString(JSON.stringify(formatMapArea(mapAreaNew)));
-    setMapAreaFormatString(JSON.stringify(formatMapArea(mapAreaNew), null, 4));
+    setMapAreaString(JSON.stringify(mapAreaNew));
+    setMapAreaFormatString(JSON.stringify(mapAreaNew, null, 4));
   };
 
   const addSubArea = (type: string, index: number = 0) => () => {
@@ -145,8 +130,8 @@ export const ImagesMap = () => {
       mapAreaNew = [...mapArea];
     }
     setMapArea(mapAreaNew);
-    setMapAreaString(JSON.stringify(formatMapArea(mapAreaNew)));
-    setMapAreaFormatString(JSON.stringify(formatMapArea(mapAreaNew), null, 4));
+    setMapAreaString(JSON.stringify(mapAreaNew));
+    setMapAreaFormatString(JSON.stringify(mapAreaNew, null, 4));
     message.success('success');
   };
 
@@ -154,8 +139,8 @@ export const ImagesMap = () => {
     setCrop(percentCrop);
   };
 
-  const onMapClick = (area: AreaType, index: number) => {
-    const tip = `click map ${area.href || index + 1}`;
+  const onMapClick = (area: Area, index: number) => {
+    const tip = `click map ${(area as Area & { href: string }).href || index + 1}`;
     console.log(tip, area);
     message.info(tip);
   };
@@ -166,8 +151,8 @@ export const ImagesMap = () => {
     try {
       result = JSON.parse(value);
       setMapArea(result);
-      setMapAreaString(JSON.stringify(formatMapArea(result)));
-      setMapAreaFormatString(JSON.stringify(formatMapArea(result), null, 4));
+      setMapAreaString(JSON.stringify(result));
+      setMapAreaFormatString(JSON.stringify(result, null, 4));
       message.success('success');
     } catch (error) {
       console.log(error);
@@ -180,7 +165,9 @@ export const ImagesMap = () => {
       <ImageMap
         className="usage-map"
         src={img}
-        map={formatMapArea(mapArea)}
+        onMouseDown={() => message.info('onMouseDown')}
+        map={mapArea}
+        alt="React Image Map"
         onMapClick={onMapClick}
       />
     ),
@@ -194,18 +181,12 @@ export const ImagesMap = () => {
           <div className="map-box-img">
             <ReactCrop src={img} crop={crop} ruleOfThirds onChange={onCropChange} />
             {img &&
-              mapArea.map((map: any, index: number) => (
-                <span
-                  className="crop-item"
-                  key={index}
-                  style={{
-                    width: `${parseFloat(map.width)}%`,
-                    height: `${parseFloat(map.height)}%`,
-                    left: `${parseFloat(map.left)}%`,
-                    top: `${parseFloat(map.top)}%`
-                  }}
-                />
-              ))}
+              mapArea.map((map: Area, index: number) => {
+                const { top, left, width, height } = map;
+                return (
+                  <span className="crop-item" key={index} style={{ top, left, width, height }} />
+                );
+              })}
           </div>
           <div className="map-box-img">{ImageMapComponent}</div>
         </div>

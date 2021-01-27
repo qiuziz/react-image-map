@@ -16,7 +16,9 @@ $ npm install @qiuz/react-image-map
 
 打开 [http://blog.qiuz.site/widget/react-image-map/](http://blog.qiuz.site/widget/react-image-map/) 
 
-或者 传递`imgSrc`参数  [http://blog.qiuz.site/widget/react-image-map/?imgSrc=img_address](http://blog.qiuz.site/widget/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
+或者 传递`imgSrc`参数  [http://blog.qiuz.site/widget/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg](http://blog.qiuz.site/widget/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
+
+> `imgSrc` is img url
 
 
 
@@ -43,6 +45,11 @@ interface AreaType extends Area {
 | `map`        | `Area[]`                                  | `[]`    |
 
 
+## CHANGELOG
+
+- access all React.Img props, including events and attributes(like onMounse events and img alt attr.)
+
+
 ### 示例
 [在线示例](https://codesandbox.io/s/silent-bash-c6zwx)
 ```jsx
@@ -50,9 +57,9 @@ const img = 'https://images.app.goo.gl/STr3xKQMbdjLketR7';
 
 const mapArea = [{"left":"0%","top":"6%","height":"12%","width":"33%"}];
 
-const onMapClick = (area: AreaType, index: number) => {
-	const tip = `click map${area.href || index + 1}`;
-	console.log(tip);
+const onMapClick = (area, index) => {
+	const tip = `click map${index + 1}`;
+	console.log(tip, area);
 	alert(tip);
 }
 

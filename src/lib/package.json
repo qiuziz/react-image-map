@@ -2,7 +2,7 @@
 	"name": "@qiuz/react-image-map",
 	"version": "1.0.11",
 	"homepage": "https://qiuziz.github.io/react-image-map",
-	"description": "A percent react image map compnent - ",
+	"description": "基于 React 的图片热区高效设置",
 	"license": "MIT",
 	"keywords": [
 		"react-iamge-map",
@@ -10,7 +10,6 @@
 		"hooks",
 		"image-map",
 		"image",
-		"img map",
 		"map",
 		"react-component",
 		"component",
