@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2021-01-27 23:34:23
+ * @Last Modified time: 2021-01-28 00:04:40
  */
 
 import React from 'react';
@@ -118,10 +118,10 @@ export const ImagesMap = () => {
     if (type === 'add') {
       const { x, y, width, height } = crop;
       newArea = {
-        width: width,
-        height: height,
-        left: x,
-        top: y,
+        width: `${width}%`,
+        height: `${height}%`,
+        left: `${x}%`,
+        top: `${y}%`,
         href: ''
       };
       mapAreaNew = [...mapArea, newArea];
