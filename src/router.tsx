@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 
 import { ImagesMap } from './container';
 
-const prefix = (window as any).__POWERED_BY_QIANKUN__ ? '/widget' : '';
+const prefix = (window as any).__POWERED_BY_QIANKUN__ ? '/q' : '';
 
 export const routes = [
   {
