@@ -6,12 +6,11 @@
  * @Last Modified time: 2021-01-24 23:18:15
  */
 
+import { getGlobalData } from 'common';
 import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import { ImagesMap } from './container';
-
-const prefix = (window as any).__POWERED_BY_QIANKUN__ ? '/q' : '';
 
 export const routes = [
   {
@@ -22,6 +21,7 @@ export const routes = [
 ];
 
 const App = () => {
+	const prefix = getGlobalData('PREFIX');
   return (
     <Switch>
       {routes.map(({ path, Component, exact }: any, index) => {

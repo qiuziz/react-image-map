@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2021-01-28 00:11:03
+ * @Last Modified time: 2021-01-29 23:56:50
  */
 
 import React from 'react';
@@ -17,7 +17,7 @@ import { QuestionOutlined } from '@ant-design/icons';
 import { ImageMap, Area } from 'react-image-map';
 
 import EXAMPLE from './images/example.png';
-import { getUrlParams } from 'common';
+import { getGlobalData, getUrlParams } from 'common';
 
 const EXAMPLE_AREA: any[] = [
   {
@@ -268,6 +268,9 @@ export const ImagesMap = () => {
         href="https://github.com/qiuziz/react-image-map#imagemap"
         target="_blank"
         className="help-btn"
+        style={{
+          bottom: getGlobalData('PREFIX') ? '20%' : '10%'
+        }}
         shape="circle"
         size="large"
         icon={<QuestionOutlined />}

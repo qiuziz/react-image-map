@@ -10,3 +10,4 @@ export * from './detect-os';
 export * from './is-type';
 export * from './local-storage';
 export * from './utils';
+export * from './global-data';
