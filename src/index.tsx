@@ -5,9 +5,12 @@ import * as serviceWorker from './serviceWorker';
 
 import Router from './router';
 import { setGlobalData } from 'common';
+import { message } from 'antd';
 
 declare const window: any;
 declare let __webpack_public_path__: any;
+
+
 
 setGlobalData('PREFIX', '');
 
@@ -22,7 +25,10 @@ if (window.__POWERED_BY_QIANKUN__) {
 }
 
 function render(props: any) {
-  const { container } = props;
+	const { container } = props;
+	message.config({
+		getContainer: container || document
+	});
   ReactDOM.render(<Router />, (container || document).querySelector('#root'));
 }
 
