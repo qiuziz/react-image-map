@@ -27,7 +27,7 @@ if (window.__POWERED_BY_QIANKUN__) {
 function render(props: any) {
 	const { container } = props;
 	message.config({
-		getContainer: (container || document).querySelector('#root')
+		getContainer: () => (container || document).querySelector('#root')
 	});
   ReactDOM.render(<Router />, (container || document).querySelector('#root'));
 }
