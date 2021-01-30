@@ -14,12 +14,11 @@ $ npm install @qiuz/react-image-map
 
 ### 获取热区配置
 
-打开 [http://blog.qiuz.site/widget/react-image-map/](http://blog.qiuz.site/widget/react-image-map/) 
+打开 [http://blog.qiuz.site/q/react-image-map/](http://blog.qiuz.site/q/react-image-map/) 
 
-或者 传递`imgSrc`参数  [http://blog.qiuz.site/widget/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg](http://blog.qiuz.site/widget/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
+或者 传递`imgSrc`参数  [http://blog.qiuz.site/q/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg](http://blog.qiuz.site/q/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
 
-> `imgSrc` is img url
-
+> `imgSrc`是图片链接地址
 
 
 ![page](https://raw.githubusercontent.com/qiuziz/react-image-map/master/src/assets/images/page.png)
@@ -27,10 +26,6 @@ $ npm install @qiuz/react-image-map
 ### 使用
 ```js
 import { ImageMap, Area } from '@qiuz/react-image-map';
-
-interface AreaType extends Area {
-	href?: string;
-}
 ```
 
 
@@ -47,7 +42,7 @@ interface AreaType extends Area {
 
 ## CHANGELOG
 
-- access all React.Img props, including events and attributes(like onMounse events and img alt attr.)
+- 与React Img标签的Props一致，包括事件和属性（例如 `onMounse` 事件和 `alt` 属性）
 
 
 ### 示例

@@ -17,9 +17,9 @@ $ npm install @qiuz/react-image-map
 
 ### Get mapArea
 
-open [http://blog.qiuz.site/widget/react-image-map/](http://blog.qiuz.site/widget/react-image-map/)
+open [http://blog.qiuz.site/q/react-image-map/](http://blog.qiuz.site/q/react-image-map/)
 
-or with `imgSrc` [http://blog.qiuz.site/widget/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg](http://blog.qiuz.site/widget/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
+or with `imgSrc` [http://blog.qiuz.site/q/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg](http://blog.qiuz.site/q/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
 
 > `imgSrc` is img url
 
