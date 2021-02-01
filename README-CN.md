@@ -16,7 +16,11 @@ $ npm install @qiuz/react-image-map
 
 打开 [http://blog.qiuz.site/q/react-image-map/](http://blog.qiuz.site/q/react-image-map/) 
 
-或者 传递`imgSrc`参数  [http://blog.qiuz.site/q/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg](http://blog.qiuz.site/q/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
+然后选择你自己的图片
+
+你也可以传递`?imgSrc=${url}`参数，比如：
+
+[http://blog.qiuz.site/q/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg](http://blog.qiuz.site/q/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
 
 > `imgSrc`是图片链接地址
 
