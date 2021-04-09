@@ -1,6 +1,6 @@
 {
 	"name": "@qiuz/react-image-map",
-	"version": "1.0.17",
+	"version": "1.1.0",
 	"homepage": "http://blog.qiuz.site/react-image-map",
 	"description": "A percent react image map compnent - ",
 	"license": "MIT",
@@ -46,7 +46,7 @@
 	"devDependencies": {
 		"@ant-design/icons": "4.0.0",
 		"@babel/core": "7.4.3",
-		"@qiuz/react-image-map": "1.0.16",
+		"@qiuz/react-image-map": "1.0.17",
 		"@svgr/webpack": "4.1.0",
 		"@types/node": "12.0.7",
 		"@types/qs": "^6.5.3",

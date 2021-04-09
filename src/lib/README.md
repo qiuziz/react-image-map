@@ -52,7 +52,7 @@ import { ImageMap } from '@qiuz/react-image-map';
 
 
 
-#### Area(extent React.SpanHTMLAttributes)
+#### Area(extend React.SpanHTMLAttributes)
 | Name         | Type                                      | Default |
 | :----------- | :---------------------------------------- | :------ |
 | `left`  		 | `String`                                  | `0`     |
