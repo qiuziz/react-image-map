@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2021-01-29 23:56:50
+ * @Last Modified time: 2021-04-09 14:37:11
  */
 
 import React from 'react';
@@ -14,19 +14,20 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { useState, useEffect } from 'react';
 import { Button, message } from 'antd';
 import { QuestionOutlined } from '@ant-design/icons';
-import { ImageMap, Area } from 'react-image-map';
+// import { ImageMap, Area } from 'react-image-map';
+import { ImageMap, Area } from 'component';
 
 import EXAMPLE from './images/example.png';
 import { getGlobalData, getUrlParams } from 'common';
 
-const EXAMPLE_AREA: any[] = [
+const EXAMPLE_AREA: Area[] = [
   {
     left: '0%',
     top: '6%',
     height: '12%',
     width: '33%',
-    href: '',
     style: { background: 'rgba(255, 0, 0, 0.5)' },
+    render: (area: any, index: number) => <span>aaa</span>,
     onMouseOver: () => message.info('map onMouseOver')
   }
 ];
@@ -229,10 +230,6 @@ export const ImagesMap = () => {
                     type="number"
                     onChange={setMap('top', index)}
                   />
-                </div>
-                <div className="setting-box-item">
-                  <label>href: </label>
-                  <input value={map.href} type="text" onChange={setMap('href', index)} />
                 </div>
               </div>
               <i className="cad-iconfont icon-sub" onClick={addSubArea('sub', index)} />

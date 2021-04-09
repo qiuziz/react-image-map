@@ -1,11 +1,11 @@
 .image-map__content {
 	position: relative;
 	width: 100%;
-	img {
+	&__img {
 		width: 100%;
 		user-select: none;
 	}
-	span {
+	.image-map__map {
 		position: absolute;
 	}
 }

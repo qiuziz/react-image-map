@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-27 22:05:04
  * @Last Modified by: qiuz
- * @Last Modified time: 2021-01-27 12:10:26
+ * @Last Modified time: 2021-04-09 14:37:06
  */
 
 import * as React from 'react';
@@ -14,6 +14,7 @@ export interface Area
   top: string;
   height: string;
 	width: string;
+	render?: (area: Area, index: number) => React.ReactNode;
 }
 
 export interface ImageMapProps
