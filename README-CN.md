@@ -34,6 +34,7 @@ import { ImageMap, Area } from '@qiuz/react-image-map';
 
 
 ## Props
+
 #### ImageMapProps(extend React.ImgHTMLAttributes)
 
 | Name         | Type                                      | Default |
@@ -45,7 +46,7 @@ import { ImageMap, Area } from '@qiuz/react-image-map';
 | `map`        | `Area[]`                                  | `[]`    |
 
 
-#### Area(extent React.SpanHTMLAttributes)
+#### Area(extend React.SpanHTMLAttributes)
 | Name         | Type                                      | Default |
 | :----------- | :---------------------------------------- | :------ |
 | `left`  		 | `String`                                  | `0`     |
