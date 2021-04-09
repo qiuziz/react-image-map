@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2021-04-09 14:37:11
+ * @Last Modified time: 2021-04-09 14:56:09
  */
 
 import React from 'react';
@@ -14,8 +14,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { useState, useEffect } from 'react';
 import { Button, message } from 'antd';
 import { QuestionOutlined } from '@ant-design/icons';
-// import { ImageMap, Area } from 'react-image-map';
-import { ImageMap, Area } from 'component';
+import { ImageMap, Area } from 'react-image-map';
 
 import EXAMPLE from './images/example.png';
 import { getGlobalData, getUrlParams } from 'common';
@@ -27,7 +26,26 @@ const EXAMPLE_AREA: Area[] = [
     height: '12%',
     width: '33%',
     style: { background: 'rgba(255, 0, 0, 0.5)' },
-    render: (area: any, index: number) => <span>aaa</span>,
+    onMouseOver: () => message.info('map onMouseOver')
+  },
+  {
+    width: '33%',
+    height: '12%',
+    left: '0%',
+    top: '36.37931034482759%',
+    style: { background: 'rgba(255, 0, 0, 0.5)' },
+    render: (area: any, index: number) => (
+      <span
+				style={{
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+          background: 'rgba(255, 255, 0, 0.5)'
+        }}
+      >
+        can render map node
+      </span>
+    ),
     onMouseOver: () => message.info('map onMouseOver')
   }
 ];
@@ -123,7 +141,6 @@ export const ImagesMap = () => {
         height: `${height}%`,
         left: `${x}%`,
         top: `${y}%`,
-        href: ''
       };
       mapAreaNew = [...mapArea, newArea];
     } else {
@@ -141,7 +158,7 @@ export const ImagesMap = () => {
   };
 
   const onMapClick = (area: Area, index: number) => {
-    const tip = `click map ${(area as Area & { href: string }).href || index + 1}`;
+    const tip = `click map ${index + 1}`;
     console.log(tip, area);
     message.info(tip);
   };

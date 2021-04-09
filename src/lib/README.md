@@ -1,40 +1,43 @@
 ## ImageMap
-[![Build Status](https://travis-ci.org/qiuziz/react-image-map.svg?branch=master)](https://travis-ci.org/qiuziz/react-image-map)
-![npm](https://img.shields.io/npm/v/@qiuz/react-image-map)
-![David](https://img.shields.io/david/dev/qiuziz/react-image-map)
 
-> 一个使用百分比添加热区的`React`组件
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/qiuziz/react-image-map/CI?label=Github%20Actions)](https://github.com/qiuziz/react-image-map/actions?query=workflow%3ACI)
+[![npm](https://img.shields.io/npm/v/@qiuz/react-image-map)](https://www.npmjs.com/package/@qiuz/react-image-map)
 
-### 安装
+> A percent react image map compnent
+
+[简体中文](https://github.com/qiuziz/react-image-map/blob/master/README-CN.md)
+
+### Installation
+
 ```sh
 $ yarn add @qiuz/react-image-map
 # or
 $ npm install @qiuz/react-image-map
 ```
 
-### 获取热区配置
+### Get mapArea
 
-打开 [http://blog.qiuz.site/q/react-image-map/](http://blog.qiuz.site/q/react-image-map/) 
+open [http://blog.qiuz.site/q/react-image-map/](http://blog.qiuz.site/q/react-image-map/)
 
-然后选择你自己的图片
+and select yourself img
 
-你也可以传递`?imgSrc=${url}`参数，比如：
+
+you can add `?imgSrc=${url}` like:
 
 [http://blog.qiuz.site/q/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg](http://blog.qiuz.site/q/react-image-map/?imgSrc=http://5b0988e595225.cdn.sohucs.com/images/20170920/2a178d11bc8b4178a387398b5658e105.jpeg)
 
-> `imgSrc`是图片链接地址
 
+> `imgSrc` is img url
 
 ![page](https://raw.githubusercontent.com/qiuziz/react-image-map/master/src/assets/images/page.png)
 
-### 使用
+### Usage
+
 ```js
-import { ImageMap, Area } from '@qiuz/react-image-map';
+import { ImageMap } from '@qiuz/react-image-map';
 ```
 
-
 ## Props
-#### ImageMapProps(extend React.ImgHTMLAttributes)
 
 | Name         | Type                                      | Default |
 | :----------- | :---------------------------------------- | :------ |
@@ -44,24 +47,14 @@ import { ImageMap, Area } from '@qiuz/react-image-map';
 | `onMapClick` | `(area: AreaType, index: number) => void` | `noop`  |
 | `map`        | `Area[]`                                  | `[]`    |
 
-
-#### Area(extent React.SpanHTMLAttributes)
-| Name         | Type                                      | Default |
-| :----------- | :---------------------------------------- | :------ |
-| `left`  		 | `String`                                  | `0`     |
-| `top`        | `String`                                  | `0`     |
-| `width`      | `String`                                  | `0`     |
-| `height`     | `string`                                  | `0`     |
-
-
 ## CHANGELOG
 
-- 与React Img标签的Props一致，包括事件和属性（例如 `onMounse` 事件和 `alt` 属性）
-- 热区可以通过render参数自定义节点内容(2021.4.9)
+- access all React.Img props, including events and attributes(like onMounse events and img alt attr.)
 
+### Example
 
-### 示例
-[在线示例](https://codesandbox.io/s/silent-bash-c6zwx)
+[online example](https://codesandbox.io/s/silent-bash-c6zwx)
+
 ```jsx
 const img = 'https://images.app.goo.gl/STr3xKQMbdjLketR7';
 

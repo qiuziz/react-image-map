@@ -39,6 +39,8 @@ import { ImageMap } from '@qiuz/react-image-map';
 
 ## Props
 
+#### ImageMapProps(extend React.ImgHTMLAttributes)
+
 | Name         | Type                                      | Default |
 | :----------- | :---------------------------------------- | :------ |
 | `className`  | `String`                                  | `''`    |
@@ -47,9 +49,21 @@ import { ImageMap } from '@qiuz/react-image-map';
 | `onMapClick` | `(area: AreaType, index: number) => void` | `noop`  |
 | `map`        | `Area[]`                                  | `[]`    |
 
+
+
+
+#### Area(extent React.SpanHTMLAttributes)
+| Name         | Type                                      | Default |
+| :----------- | :---------------------------------------- | :------ |
+| `left`  		 | `String`                                  | `0`     |
+| `top`        | `String`                                  | `0`     |
+| `width`      | `String`                                  | `0`     |
+| `height`     | `string`                                  | `0`     |
+
 ## CHANGELOG
 
 - access all React.Img props, including events and attributes(like onMounse events and img alt attr.)
+- image map can use render to custom your ReactNode(2021.4.9))
 
 ### Example
 
