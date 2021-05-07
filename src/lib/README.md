@@ -46,19 +46,20 @@ import { ImageMap } from '@qiuz/react-image-map';
 | `className`  | `String`                                  | `''`    |
 | `src`        | `String`                                  | `''`    |
 | `onClick`    | `() => void`                              | `noop`  |
-| `onMapClick` | `(area: AreaType, index: number) => void` | `noop`  |
+| `onMapClick` | `(area: Area, index: number) => void`     | `noop`  |
 | `map`        | `Area[]`                                  | `[]`    |
 
 
 
 
 #### Area(extend React.SpanHTMLAttributes)
-| Name         | Type                                      | Default |
-| :----------- | :---------------------------------------- | :------ |
-| `left`  		 | `String`                                  | `0`     |
-| `top`        | `String`                                  | `0`     |
-| `width`      | `String`                                  | `0`     |
-| `height`     | `string`                                  | `0`     |
+| Name         | Type                                            | Default |
+| :----------- | :--------------------------------------------   | :------ |
+| `left`  		 | `String`                                        | `0`     |
+| `top`        | `String`                                        | `0`     |
+| `width`      | `String`                                        | `0`     |
+| `height`     | `string`                                        | `0`     |
+| `render`     | `(area: Area, index: number) => React.ReactNode`| `0`     |
 
 ## CHANGELOG
 
@@ -72,7 +73,36 @@ import { ImageMap } from '@qiuz/react-image-map';
 ```jsx
 const img = 'https://images.app.goo.gl/STr3xKQMbdjLketR7';
 
-const mapArea = [{"left":"0%","top":"6%","height":"12%","width":"33%"}];
+const mapArea: Area[] = [
+  {
+    left: '0%',
+    top: '6%',
+    height: '12%',
+    width: '33%',
+    style: { background: 'rgba(255, 0, 0, 0.5)' },
+    onMouseOver: () => console.log('map onMouseOver')
+  },
+  {
+    width: '33%',
+    height: '12%',
+    left: '0%',
+    top: '36.37931034482759%',
+    style: { background: 'rgba(255, 0, 0, 0.5)' },
+    render: (area: any, index: number) => (
+      <span
+				style={{
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+          background: 'rgba(255, 255, 0, 0.5)'
+        }}
+      >
+        can render map node
+      </span>
+    ),
+    onMouseOver: () => console.log('map onMouseOver')
+  }
+];
 
 const onMapClick = (area, index) => {
 	const tip = `click map${index + 1}`;
