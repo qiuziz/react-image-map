@@ -53,7 +53,8 @@ import { ImageMap, Area } from '@qiuz/react-image-map';
 | `top`        | `String`                                        | `0`     |
 | `width`      | `String`                                        | `0`     |
 | `height`     | `string`                                        | `0`     |
-| `render`     | `(area: Area, index: number) => React.ReactNode`| `0`     |
+| `style`      | `React.CSSProperties`                           | `0`     |
+| `render`     | `(area: Area, index: number) => React.ReactNode`| `null`  |
 
 
 ## CHANGELOG
