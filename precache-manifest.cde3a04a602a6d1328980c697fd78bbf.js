@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5a972c49153bc7e4c41996d17d276dd1",
+    "revision": "a58f7d773fb516c7981a6927ccd02cfc",
     "url": "/react-image-map/index.html"
   },
   {
-    "revision": "9f0bda992d673df774ae",
+    "revision": "00d455513ac7b4c89353",
     "url": "/react-image-map/static/css/2.09a5d416.chunk.css"
   },
   {
-    "revision": "20771d56516ebf03c8af",
-    "url": "/react-image-map/static/css/main.ca0226a0.chunk.css"
+    "revision": "12a4caa4bd2a6a49b5b4",
+    "url": "/react-image-map/static/css/main.56920175.chunk.css"
   },
   {
-    "revision": "9f0bda992d673df774ae",
-    "url": "/react-image-map/static/js/2.8fe7ec0b.chunk.js"
+    "revision": "00d455513ac7b4c89353",
+    "url": "/react-image-map/static/js/2.83c0041a.chunk.js"
   },
   {
-    "revision": "20771d56516ebf03c8af",
-    "url": "/react-image-map/static/js/main.ce8e0096.chunk.js"
+    "revision": "12a4caa4bd2a6a49b5b4",
+    "url": "/react-image-map/static/js/main.1f065849.chunk.js"
   },
   {
     "revision": "ba89f44dc06096197a7a",
