@@ -37,7 +37,7 @@
 		"test": "node scripts/test.js",
 		"build": "GENERATE_SOURCEMAP=false node scripts/build.js",
 		"build:lib": "BUILD_ENV=prod sh scripts/build_lib.sh",
-		"dev:lib": "sh scripts/build_lib.sh",
+		"dev:lib": "sh scripts/build_lib.sh dev",
 		"deploy": "sh scripts/deploy.sh",
 		"pages": "yarn build && yarn gh-pages -d build -t -m 'docs: update'",
 		"cz": "git-cz"

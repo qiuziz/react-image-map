@@ -3,14 +3,12 @@
 set -e
 
 function build() {
+    DEV=$1
     
     node scripts/build-lib.js
     
     BASE=lib
     
-    # copy files
-    # cp -rf package.json $BASE
-    # cp -rf README.md $BASE
     cp -rf src/component/image-map/index.d.ts $BASE
     
     # create build/index.js
@@ -18,6 +16,10 @@ function build() {
 		var ImageMap = require('./react-image-map.js');
 		module.exports = { ImageMap: ImageMap };
 		EOT
+    
+    if [[ $DEV = 'dev' ]]; then
+        cp -rf $BASE node_modules/@qiuz/react-image-map
+    fi
 }
 
 
