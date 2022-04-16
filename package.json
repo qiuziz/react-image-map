@@ -1,6 +1,6 @@
 {
 	"name": "@qiuz/react-image-map",
-	"version": "1.1.5",
+	"version": "1.1.3",
 	"homepage": "http://blog.qiuz.site/react-image-map",
 	"description": "A percent react image map compnent - ",
 	"license": "MIT",
@@ -16,6 +16,9 @@
 		"component",
 		"frontend"
 	],
+	"files": [
+		"lib"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/qiuziz/react-image-map.git"
@@ -24,10 +27,11 @@
 		"url": "https://github.com/qiuziz/react-image-map/issues"
 	},
 	"publishConfig": {
+		"cache": "cache/.npm",
 		"access": "public"
 	},
 	"author": "qiuz",
-	"main": "index.js",
+	"main": "lib/index.js",
 	"scripts": {
 		"start": "node scripts/start.js",
 		"test": "node scripts/test.js",
@@ -38,7 +42,7 @@
 		"pages": "yarn build && yarn gh-pages -d build -t -m 'docs: update'",
 		"cz": "git-cz"
 	},
-	"typings": "index.d.ts",
+	"typings": "lib/index.d.ts",
 	"dependencies": {
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6"
@@ -46,7 +50,7 @@
 	"devDependencies": {
 		"@ant-design/icons": "4.0.0",
 		"@babel/core": "7.4.3",
-		"@qiuz/react-image-map": "1.1.3",
+		"@qiuz/react-image-map": "file:lib",
 		"@svgr/webpack": "4.1.0",
 		"@types/node": "12.0.7",
 		"@types/qs": "^6.5.3",

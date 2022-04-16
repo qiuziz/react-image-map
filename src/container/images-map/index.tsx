@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2022-04-16 15:06:23
+ * @Last Modified time: 2022-04-16 16:17:52
  */
 
 import React from 'react';
@@ -14,7 +14,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { useState, useEffect } from 'react';
 import { Button, message } from 'antd';
 import { QuestionOutlined } from '@ant-design/icons';
-import { ImageMap, Area } from 'react-image-map';
+import { ImageMap, Area } from '@qiuz/react-image-map';
 
 import EXAMPLE from './images/example.png';
 import { getGlobalData, getUrlParams } from 'common';

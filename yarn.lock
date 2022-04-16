@@ -1443,13 +1443,8 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@qiuz/react-image-map@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@qiuz/react-image-map/-/react-image-map-1.1.3.tgz#37a9a911d27fb6ba6bafdcff205ead1c720a6c92"
-  integrity sha512-nAY9NUP3/8DTy0P2RiGNhhqgHfJ8aTPYrt8B7FJ+qvAGY3J8ec/ewZa63cI1bjJukEKav3FopzmWGILRZT3Gcw==
-  dependencies:
-    react "^16.8.6"
-    react-dom "^16.8.6"
+"@qiuz/react-image-map@file:lib":
+  version "0.0.0"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"

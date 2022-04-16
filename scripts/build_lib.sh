@@ -6,16 +6,15 @@ function build() {
     
     node scripts/build-lib.js
     
-    BASE=src/lib
+    BASE=lib
     
     # copy files
-    cp -rf package.json $BASE
-    cp -rf README.md $BASE
+    # cp -rf package.json $BASE
+    # cp -rf README.md $BASE
     cp -rf src/component/image-map/index.d.ts $BASE
     
     # create build/index.js
 		cat > $BASE/index.js <<- EOT
-		# require('./react-image-map.css');
 		var ImageMap = require('./react-image-map.js');
 		module.exports = { ImageMap: ImageMap };
 		EOT
@@ -29,12 +28,12 @@ function buildProd() {
     
     build
     
-    git add .
-    git commit -m '**ImageMap npm build**'
+    # git add .
+    # git commit -m '**ImageMap npm build**'
     
     # npm login
     
-    npm publish src/lib
+    npm publish .
     
     yarn add @qiuz/react-image-map@${VERSION#*v} -D
     

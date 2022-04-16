@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "src",
     "allowJs": true,
     "skipLibCheck": true,
@@ -19,18 +15,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-		"experimentalDecorators": true,
-		"paths": {
-      "react-image-map": [
-        "lib"
-      ]
-    }
+    "experimentalDecorators": true
   },
-  "include": [
-		"src"
-	],
-	"exclude": [
-		"config",
-		"**__test__**"
-	]
+  "include": ["src"],
+  "exclude": ["config", "**__test__**"]
 }
