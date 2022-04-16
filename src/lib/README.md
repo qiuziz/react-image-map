@@ -65,7 +65,8 @@ import { ImageMap } from '@qiuz/react-image-map';
 ## CHANGELOG
 
 - access all React.Img props, including events and attributes(like onMounse events and img alt attr.)
-- image map can use render to custom your ReactNode(2021.4.9))
+- image map can use render to custom your ReactNode(2021.4.9)
+- use inline style for fix nextjs global css import issue(2022.4.16)
 
 ### Example
 

@@ -61,6 +61,7 @@ import { ImageMap, Area } from '@qiuz/react-image-map';
 
 - 与React Img标签的Props一致，包括事件和属性（例如 `onMounse` 事件和 `alt` 属性）
 - 热区可以通过render参数自定义节点内容(2021.4.9)
+- 使用行内样式解决nextjs中样式导入问题(2022.4.16)
 
 
 ### 示例

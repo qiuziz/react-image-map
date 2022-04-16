@@ -3,7 +3,7 @@
  * @Github: <https://github.com/qiuziz>
  * @Date: 2019-11-25 12:55:15
  * @Last Modified by: qiuz
- * @Last Modified time: 2021-04-09 14:56:09
+ * @Last Modified time: 2022-04-16 15:06:23
  */
 
 import React from 'react';
@@ -36,10 +36,10 @@ const EXAMPLE_AREA: Area[] = [
     style: { background: 'rgba(255, 0, 0, 0.5)' },
     render: (area: any, index: number) => (
       <span
-				style={{
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'center',
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           background: 'rgba(255, 255, 0, 0.5)'
         }}
       >
@@ -131,27 +131,29 @@ export const ImagesMap = () => {
     setMapAreaFormatString(JSON.stringify(mapAreaNew, null, 4));
   };
 
-  const addSubArea = (type: string, index: number = 0) => () => {
-    let newArea = {},
-      mapAreaNew: any = [];
-    if (type === 'add') {
-      const { x, y, width, height } = crop;
-      newArea = {
-        width: `${width}%`,
-        height: `${height}%`,
-        left: `${x}%`,
-        top: `${y}%`,
-      };
-      mapAreaNew = [...mapArea, newArea];
-    } else {
-      mapArea.splice(index, 1);
-      mapAreaNew = [...mapArea];
-    }
-    setMapArea(mapAreaNew);
-    setMapAreaString(JSON.stringify(mapAreaNew));
-    setMapAreaFormatString(JSON.stringify(mapAreaNew, null, 4));
-    message.success('success');
-  };
+  const addSubArea =
+    (type: string, index: number = 0) =>
+    () => {
+      let newArea = {},
+        mapAreaNew: any = [];
+      if (type === 'add') {
+        const { x, y, width, height } = crop;
+        newArea = {
+          width: `${width}%`,
+          height: `${height}%`,
+          left: `${x}%`,
+          top: `${y}%`
+        };
+        mapAreaNew = [...mapArea, newArea];
+      } else {
+        mapArea.splice(index, 1);
+        mapAreaNew = [...mapArea];
+      }
+      setMapArea(mapAreaNew);
+      setMapAreaString(JSON.stringify(mapAreaNew));
+      setMapAreaFormatString(JSON.stringify(mapAreaNew, null, 4));
+      message.success('success');
+    };
 
   const onCropChange = (crop: any, percentCrop: any) => {
     setCrop(percentCrop);
@@ -174,7 +176,7 @@ export const ImagesMap = () => {
       message.success('success');
     } catch (error) {
       console.log(error);
-      message.error(error);
+      message.error(`${error}`);
     }
   };
 
