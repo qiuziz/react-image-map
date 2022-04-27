@@ -1443,10 +1443,10 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@qiuz/react-image-map@1.1.5":
-  version "1.1.5"
-  resolved "https://registry.npmjs.org/@qiuz/react-image-map/-/react-image-map-1.1.5.tgz#c865dac62c82eaa2aa44b662acc667855e06a9e2"
-  integrity sha512-t6mXVFKr86u8OXXhWrwCoYKIHYsPaQJSmuDcBS7MwtEzrkIHlvqvu3NGv464FJIwDu1PsDYWeC+ye+QyeyNL+g==
+"@qiuz/react-image-map@1.1.7":
+  version "1.1.7"
+  resolved "https://registry.npmjs.org/@qiuz/react-image-map/-/react-image-map-1.1.7.tgz#247d953f9c74911424e2dfbf6ea24bc2e1ee10a7"
+  integrity sha512-rryeS41B8zgWSfzfUz6Fv+BpESwDOBuGb1k1395L4F5nowHp+0B+Szq2np6ryJ5+xYtyOSeDplF75lS1WqZ0ew==
   dependencies:
     react "^16.8.6"
     react-dom "^16.8.6"
