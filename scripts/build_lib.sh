@@ -35,7 +35,7 @@ function buildProd() {
     
     # npm login
     
-    npm publish .
+    npm publish . --tag latest
     
     yarn add @qiuz/react-image-map@${VERSION#*v} -D
     

@@ -28,7 +28,8 @@
 	},
 	"publishConfig": {
 		"cache": "cache/.npm",
-		"access": "public"
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
 	},
 	"author": "qiuz",
 	"main": "lib/index.js",
