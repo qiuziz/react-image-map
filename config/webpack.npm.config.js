@@ -92,6 +92,7 @@ module.exports = function() {
       filename: '[name].js',
 			library: 'ImageMap',
 			libraryTarget: 'umd',
+			globalObject: 'this',
 			libraryExport: 'ImageMap', 
     },
     optimization: {
