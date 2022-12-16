@@ -3,7 +3,7 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/qiuziz/react-image-map/CI?label=Github%20Actions)](https://github.com/qiuziz/react-image-map/actions?query=workflow%3ACI)
 [![npm](https://img.shields.io/npm/v/@qiuz/react-image-map)](https://www.npmjs.com/package/@qiuz/react-image-map)
 
-> A percent react image map compnent
+> A percent react image map component
 
 [简体中文](https://github.com/qiuziz/react-image-map/blob/master/README-CN.md)
 
